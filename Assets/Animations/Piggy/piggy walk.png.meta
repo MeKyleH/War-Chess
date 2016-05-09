@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: eded9bc2a44a8b0429e7a6739a9a8421
+timeCreated: 1457292382
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: npc_piggy_explorer__x1_walk_png_1354837301_0
+    21300002: npc_piggy_explorer__x1_walk_png_1354837301_1
+    21300004: npc_piggy_explorer__x1_walk_png_1354837301_2
+    21300006: npc_piggy_explorer__x1_walk_png_1354837301_3
+    21300008: npc_piggy_explorer__x1_walk_png_1354837301_4
+    21300010: npc_piggy_explorer__x1_walk_png_1354837301_5
+    21300012: npc_piggy_explorer__x1_walk_png_1354837301_6
+    21300014: npc_piggy_explorer__x1_walk_png_1354837301_7
+    21300016: npc_piggy_explorer__x1_walk_png_1354837301_8
+    21300018: npc_piggy_explorer__x1_walk_png_1354837301_9
+    21300020: npc_piggy_explorer__x1_walk_png_1354837301_10
+    21300022: npc_piggy_explorer__x1_walk_png_1354837301_11
+    21300024: npc_piggy_explorer__x1_walk_png_1354837301_12
+    21300026: npc_piggy_explorer__x1_walk_png_1354837301_13
+    21300028: npc_piggy_explorer__x1_walk_png_1354837301_14
+    21300030: npc_piggy_explorer__x1_walk_png_1354837301_15
+    21300032: npc_piggy_explorer__x1_walk_png_1354837301_16
+    21300034: npc_piggy_explorer__x1_walk_png_1354837301_17
+    21300036: npc_piggy_explorer__x1_walk_png_1354837301_18
+    21300038: npc_piggy_explorer__x1_walk_png_1354837301_19
+    21300040: npc_piggy_explorer__x1_walk_png_1354837301_20
+    21300042: npc_piggy_explorer__x1_walk_png_1354837301_21
+    21300044: npc_piggy_explorer__x1_walk_png_1354837301_22
+    21300046: npc_piggy_explorer__x1_walk_png_1354837301_23
+    21300048: piggy walk_0
+    21300050: piggy walk_1
+    21300052: piggy walk_2
+    21300054: piggy walk_3
+    21300056: piggy walk_4
+    21300058: piggy walk_5
+    21300060: piggy walk_6
+    21300062: piggy walk_7
+    21300064: piggy walk_8
+    21300066: piggy walk_9
+    21300068: piggy walk_10
+    21300070: piggy walk_11
+    21300072: piggy walk_12
+    21300074: piggy walk_13
+    21300076: piggy walk_14
+    21300078: piggy walk_15
+    21300080: piggy walk_16
+    21300082: piggy walk_17
+    21300084: piggy walk_18
+    21300086: piggy walk_19
+    21300088: piggy walk_20
+    21300090: piggy walk_21
+    21300092: piggy walk_22
+    21300094: piggy walk_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: piggy walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 31}
+        - {x: -42.5, y: 22}
+        - {x: -42.5, y: -13}
+        - {x: -38.5, y: -25}
+        - {x: -34.5, y: -32}
+        - {x: 26.5, y: -32}
+        - {x: 43.5, y: -18}
+        - {x: 43.5, y: 10}
+        - {x: 27.5, y: 31}
+    - name: piggy walk_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 128
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 31}
+        - {x: -43.5, y: 19}
+        - {x: -43.5, y: -32}
+        - {x: 43.5, y: -32}
+        - {x: 43.5, y: 28}
+        - {x: 27.5, y: 31}
+    - name: piggy walk_2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 128
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40.5, y: 9}
+        - {x: 28.5, y: 31}
+        - {x: -16.5, y: 31}
+        - {x: -43.5, y: 17}
+        - {x: -43.5, y: -30}
+        - {x: -40.5, y: -32}
+        - {x: 35.5, y: -32}
+        - {x: 43.5, y: -29}
+        - {x: 43.5, y: 4}
+        - {x: 40.5, y: 4}
+    - name: piggy walk_3
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 128
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33.5, y: 32}
+        - {x: -8.5, y: 32}
+        - {x: -43.5, y: 23}
+        - {x: -43.5, y: -12}
+        - {x: -36.5, y: -30}
+        - {x: -29.5, y: -32}
+        - {x: 25.5, y: -32}
+        - {x: 43.5, y: -13}
+        - {x: 43.5, y: 22}
+    - name: piggy walk_4
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 128
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.5, y: 32}
+        - {x: -3.5, y: 32}
+        - {x: -27.5, y: 27}
+        - {x: -43.5, y: 19}
+        - {x: -43.5, y: -29}
+        - {x: -34.5, y: -32}
+        - {x: 17.5, y: -32}
+        - {x: 43.5, y: -16}
+        - {x: 43.5, y: 22}
+    - name: piggy walk_5
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 128
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.5, y: 32}
+        - {x: -12.5, y: 32}
+        - {x: -43.5, y: 19}
+        - {x: -43.5, y: -11}
+        - {x: -39.5, y: -31}
+        - {x: -37.5, y: -32}
+        - {x: 12.5, y: -32}
+        - {x: 43.5, y: -18}
+        - {x: 43.5, y: 21}
+        - {x: 38.5, y: 27}
+    - name: piggy walk_6
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 128
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43.5, y: -13}
+        - {x: 43.5, y: 25}
+        - {x: 36.5, y: 32}
+        - {x: -27.5, y: 32}
+        - {x: -43.5, y: 29}
+        - {x: -43.5, y: -10}
+        - {x: -29.5, y: -32}
+        - {x: -16.5, y: -32}
+        - {x: -16.5, y: -31}
+        - {x: -15.5, y: -32}
+        - {x: 27.5, y: -32}
+    - name: piggy walk_7
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 128
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 32}
+        - {x: -43.5, y: 17}
+        - {x: -43.5, y: -32}
+        - {x: 30.5, y: -32}
+        - {x: 43.5, y: -13}
+        - {x: 43.5, y: 9}
+        - {x: 24.5, y: 32}
+    - name: piggy walk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 32}
+        - {x: -43.5, y: 24}
+        - {x: -43.5, y: -11}
+        - {x: -40.5, y: -23}
+        - {x: -37.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 43.5, y: -13}
+        - {x: 43.5, y: 22}
+        - {x: 26.5, y: 32}
+    - name: piggy walk_9
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 64
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.5, y: 15}
+        - {x: -43.5, y: -32}
+        - {x: 43.5, y: -32}
+        - {x: 43.5, y: 19}
+        - {x: 39.5, y: 32}
+        - {x: -2.5, y: 32}
+        - {x: -41.5, y: 17}
+    - name: piggy walk_10
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 64
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 32}
+        - {x: -43.5, y: 19}
+        - {x: -43.5, y: -13}
+        - {x: -40.5, y: -28}
+        - {x: -33.5, y: -32}
+        - {x: 43.5, y: -32}
+        - {x: 43.5, y: 25}
+        - {x: 24.5, y: 32}
+    - name: piggy walk_11
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 64
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43.5, y: 20}
+        - {x: 21.5, y: 31}
+        - {x: -25.5, y: 31}
+        - {x: -42.5, y: 21}
+        - {x: -42.5, y: -23}
+        - {x: -37.5, y: -32}
+        - {x: 18.5, y: -32}
+        - {x: 22.5, y: -30}
+        - {x: 42.5, y: -15}
+        - {x: 43.5, y: -12}
+    - name: piggy walk_12
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 64
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.5, y: 4}
+        - {x: 40.5, y: 7}
+        - {x: 36.5, y: 16}
+        - {x: 24.5, y: 27}
+        - {x: 18.5, y: 31}
+        - {x: -0.5, y: 31}
+        - {x: -42.5, y: 21}
+        - {x: -42.5, y: -23}
+        - {x: -40.5, y: -32}
+        - {x: 18.5, y: -32}
+        - {x: 42.5, y: -16}
+        - {x: 43.5, y: -13}
+        - {x: 43.5, y: 3}
+    - name: piggy walk_13
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 64
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.5, y: 16}
+        - {x: 22.5, y: 31}
+        - {x: -8.5, y: 31}
+        - {x: -42.5, y: 25}
+        - {x: -43.5, y: 18}
+        - {x: -43.5, y: -32}
+        - {x: 20.5, y: -32}
+        - {x: 42.5, y: -15}
+        - {x: 43.5, y: -9}
+        - {x: 43.5, y: 6}
+    - name: piggy walk_14
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 64
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.5, y: 31}
+        - {x: -43.5, y: 27}
+        - {x: -43.5, y: -29}
+        - {x: -33.5, y: -32}
+        - {x: 29.5, y: -32}
+        - {x: 43.5, y: -19}
+        - {x: 43.5, y: 20}
+        - {x: 24.5, y: 31}
+    - name: piggy walk_15
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 64
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 32}
+        - {x: -43.5, y: 28}
+        - {x: -43.5, y: -32}
+        - {x: 37.5, y: -32}
+        - {x: 43.5, y: -31}
+        - {x: 43.5, y: 15}
+        - {x: 35.5, y: 32}
+    - name: piggy walk_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -43.5, y: 18}
+        - {x: -43.5, y: -26}
+        - {x: -30.5, y: -32}
+        - {x: 31.5, y: -32}
+        - {x: 43.5, y: -22}
+        - {x: 43.5, y: 15}
+        - {x: 26.5, y: 32}
+    - name: piggy walk_17
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.5, y: 32}
+        - {x: -7.5, y: 32}
+        - {x: -43.5, y: 17}
+        - {x: -43.5, y: -12}
+        - {x: -35.5, y: -26}
+        - {x: -27.5, y: -31}
+        - {x: -23.5, y: -32}
+        - {x: 19.5, y: -32}
+        - {x: 41.5, y: -18}
+        - {x: 43.5, y: -10}
+        - {x: 43.5, y: 11}
+    - name: piggy walk_18
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 0
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43.5, y: 5}
+        - {x: 41.5, y: 6}
+        - {x: 43.5, y: 10}
+        - {x: 43.5, y: 12}
+        - {x: 27.5, y: 32}
+        - {x: -18.5, y: 32}
+        - {x: -43.5, y: 24}
+        - {x: -43.5, y: 5}
+        - {x: -36.5, y: -26}
+        - {x: -27.5, y: -32}
+        - {x: 17.5, y: -32}
+        - {x: 39.5, y: -15}
+        - {x: 42.5, y: -11}
+        - {x: 43.5, y: -5}
+    - name: piggy walk_19
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 0
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 32}
+        - {x: -43.5, y: 20}
+        - {x: -43.5, y: -32}
+        - {x: 31.5, y: -32}
+        - {x: 43.5, y: -22}
+        - {x: 43.5, y: 32}
+    - name: piggy walk_20
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -43.5, y: 21}
+        - {x: -43.5, y: -32}
+        - {x: 27.5, y: -32}
+        - {x: 43.5, y: -15}
+        - {x: 43.5, y: 6}
+        - {x: 29.5, y: 32}
+    - name: piggy walk_21
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 0
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 32}
+        - {x: -43.5, y: 22}
+        - {x: -43.5, y: -32}
+        - {x: 31.5, y: -32}
+        - {x: 43.5, y: -18}
+        - {x: 43.5, y: 10}
+        - {x: 32.5, y: 32}
+    - name: piggy walk_22
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 0
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43.5, y: 18}
+        - {x: 24.5, y: 31}
+        - {x: -26.5, y: 31}
+        - {x: -42.5, y: 20}
+        - {x: -43.5, y: 18}
+        - {x: -43.5, y: 0}
+        - {x: -39.5, y: -24}
+        - {x: -30.5, y: -32}
+        - {x: 12.5, y: -32}
+        - {x: 22.5, y: -27}
+        - {x: 42.5, y: -12}
+        - {x: 43.5, y: -11}
+    - name: piggy walk_23
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 0
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 31}
+        - {x: -43.5, y: 22}
+        - {x: -43.5, y: -26}
+        - {x: -39.5, y: -32}
+        - {x: 37.5, y: -32}
+        - {x: 43.5, y: -19}
+        - {x: 43.5, y: 14}
+        - {x: 23.5, y: 31}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

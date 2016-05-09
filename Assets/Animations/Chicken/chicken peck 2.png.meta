@@ -1,0 +1,899 @@
+fileFormatVersion: 2
+guid: d101c430e85b6244d92e248a639ae82e
+timeCreated: 1458094654
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: chicken peck 2_0
+    21300002: chicken peck 2_1
+    21300004: chicken peck 2_2
+    21300006: chicken peck 2_3
+    21300008: chicken peck 2_4
+    21300010: chicken peck 2_5
+    21300012: chicken peck 2_6
+    21300014: chicken peck 2_7
+    21300016: chicken peck 2_8
+    21300018: chicken peck 2_9
+    21300020: chicken peck 2_10
+    21300022: chicken peck 2_11
+    21300024: chicken peck 2_12
+    21300026: chicken peck 2_13
+    21300028: chicken peck 2_14
+    21300030: chicken peck 2_15
+    21300032: chicken peck 2_16
+    21300034: chicken peck 2_17
+    21300036: chicken peck 2_18
+    21300038: chicken peck 2_19
+    21300040: chicken peck 2_20
+    21300042: chicken peck 2_21
+    21300044: chicken peck 2_22
+    21300046: chicken peck 2_23
+    21300048: chicken peck 2_24
+    21300050: chicken peck 2_25
+    21300052: chicken peck 2_26
+    21300054: chicken peck 2_27
+    21300056: chicken peck 2_28
+    21300058: chicken peck 2_29
+    21300060: chicken peck 2_30
+    21300062: chicken peck 2_31
+    21300064: chicken peck 2_32
+    21300066: chicken peck 2_33
+    21300068: chicken peck 2_34
+    21300070: chicken peck 2_35
+    21300072: chicken peck 2_36
+    21300074: chicken peck 2_37
+    21300076: chicken peck 2_38
+    21300078: chicken peck 2_39
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: chicken peck 2_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 671
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 671
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_2
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 671
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_3
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 671
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_4
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 671
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_5
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 671
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 561
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_7
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 561
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_8
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 561
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_9
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 561
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 32}
+        - {x: -23, y: 24}
+        - {x: -26, y: 18}
+        - {x: -26, y: -14}
+        - {x: -9, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -15}
+        - {x: 26, y: 30}
+        - {x: 24, y: 32}
+    - name: chicken peck 2_10
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 561
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31}
+        - {x: -23.5, y: 21}
+        - {x: -28.5, y: 15}
+        - {x: -28.5, y: -9}
+        - {x: -27.5, y: -12}
+        - {x: -11.5, y: -31}
+        - {x: 15.5, y: -31}
+        - {x: 28.5, y: -4}
+        - {x: 28.5, y: 29}
+        - {x: 27.5, y: 31}
+    - name: chicken peck 2_11
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 561
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31}
+        - {x: -23.5, y: 21}
+        - {x: -28.5, y: 15}
+        - {x: -28.5, y: -9}
+        - {x: -27.5, y: -12}
+        - {x: -11.5, y: -31}
+        - {x: 15.5, y: -31}
+        - {x: 28.5, y: -4}
+        - {x: 28.5, y: 29}
+        - {x: 27.5, y: 31}
+    - name: chicken peck 2_12
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 451
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 26}
+        - {x: -31.5, y: 26}
+        - {x: -31.5, y: -26}
+        - {x: 31.5, y: -26}
+        - {x: 31.5, y: 0}
+        - {x: 24.5, y: 16}
+    - name: chicken peck 2_13
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 451
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: -22}
+        - {x: 22.5, y: -26}
+        - {x: 24.5, y: -26}
+        - {x: 28.5, y: -25}
+        - {x: 31.5, y: -17}
+        - {x: 31.5, y: 2}
+        - {x: 10.5, y: 18}
+        - {x: -12.5, y: 26}
+        - {x: -31.5, y: 26}
+        - {x: -31.5, y: -8}
+        - {x: -26.5, y: -26}
+        - {x: 10.5, y: -26}
+        - {x: 10.5, y: -19}
+        - {x: 3.5, y: -15}
+        - {x: 4.5, y: -13}
+    - name: chicken peck 2_14
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 451
+        width: 64
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: -16}
+        - {x: 32, y: 8}
+        - {x: -6, y: 26}
+        - {x: -32, y: 26}
+        - {x: -32, y: -1}
+        - {x: -20, y: -22}
+        - {x: -14, y: -26}
+        - {x: 10, y: -26}
+        - {x: 11, y: -22}
+        - {x: 11, y: -19}
+        - {x: 24, y: -25}
+    - name: chicken peck 2_15
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 451
+        width: 64
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: -18}
+        - {x: 32, y: -17}
+        - {x: 32, y: 11}
+        - {x: 31, y: 14}
+        - {x: -3, y: 26}
+        - {x: -29, y: 26}
+        - {x: -32, y: 25}
+        - {x: -32, y: -1}
+        - {x: -21, y: -22}
+        - {x: -14, y: -26}
+        - {x: 10, y: -26}
+        - {x: 11, y: -22}
+        - {x: 11, y: -19}
+        - {x: 4, y: -15}
+    - name: chicken peck 2_16
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 451
+        width: 66
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 25.5}
+        - {x: -33, y: 25.5}
+        - {x: -33, y: -8.5}
+        - {x: -28, y: -25.5}
+        - {x: 14, y: -25.5}
+        - {x: 33, y: -14.5}
+        - {x: 33, y: 15.5}
+        - {x: 32, y: 20.5}
+    - name: chicken peck 2_17
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 451
+        width: 67
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.5, y: 25.5}
+        - {x: -33.5, y: 25.5}
+        - {x: -33.5, y: -2.5}
+        - {x: -20.5, y: -21.5}
+        - {x: -15.5, y: -25.5}
+        - {x: 24.5, y: -25.5}
+        - {x: 33.5, y: -20.5}
+        - {x: 33.5, y: 12.5}
+        - {x: 26.5, y: 17.5}
+    - name: chicken peck 2_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 341
+        width: 67
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.5, y: 18.5}
+        - {x: -10.5, y: 25.5}
+        - {x: -33.5, y: 25.5}
+        - {x: -33.5, y: -1.5}
+        - {x: -22.5, y: -22.5}
+        - {x: -16.5, y: -25.5}
+        - {x: 9.5, y: -25.5}
+        - {x: 10.5, y: -18.5}
+        - {x: 33.5, y: -11.5}
+        - {x: 33.5, y: 13.5}
+    - name: chicken peck 2_19
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 341
+        width: 64
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 17}
+        - {x: -1, y: 18}
+        - {x: -17, y: 26}
+        - {x: -28, y: 26}
+        - {x: -32, y: 23}
+        - {x: -32, y: -7}
+        - {x: -17, y: -26}
+        - {x: 15, y: -26}
+        - {x: 32, y: -15}
+        - {x: 32, y: 8}
+        - {x: 29, y: 12}
+    - name: chicken peck 2_20
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 341
+        width: 64
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 26}
+        - {x: -32, y: -9}
+        - {x: -22, y: -26}
+        - {x: 32, y: -26}
+        - {x: 32, y: 11}
+        - {x: -6, y: 26}
+    - name: chicken peck 2_21
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 341
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.5, y: -25}
+        - {x: 31.5, y: -18}
+        - {x: 31.5, y: 10}
+        - {x: -8.5, y: 26}
+        - {x: -31.5, y: 26}
+        - {x: -31.5, y: -2}
+        - {x: -23.5, y: -24}
+        - {x: -18.5, y: -26}
+        - {x: 9.5, y: -26}
+        - {x: 10.5, y: -22}
+        - {x: 10.5, y: -19}
+        - {x: 3.5, y: -15}
+    - name: chicken peck 2_22
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 341
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.5, y: 13}
+        - {x: -10.5, y: 26}
+        - {x: -31.5, y: 26}
+        - {x: -31.5, y: -8}
+        - {x: -26.5, y: -26}
+        - {x: 9.5, y: -26}
+        - {x: 11.5, y: -19}
+        - {x: 19.5, y: -26}
+        - {x: 31.5, y: -26}
+    - name: chicken peck 2_23
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 341
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 26}
+        - {x: -31.5, y: -13}
+        - {x: -28.5, y: -26}
+        - {x: 24.5, y: -26}
+        - {x: 31.5, y: -19}
+        - {x: 31.5, y: 7}
+        - {x: -6.5, y: 26}
+    - name: chicken peck 2_24
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 231
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.5, y: -23}
+        - {x: 24.5, y: -26}
+        - {x: 31.5, y: -16}
+        - {x: 31.5, y: 2}
+        - {x: 28.5, y: 6}
+        - {x: -6.5, y: 26}
+        - {x: -31.5, y: 26}
+        - {x: -31.5, y: 0}
+        - {x: -21.5, y: -26}
+        - {x: 9.5, y: -26}
+        - {x: 10.5, y: -22}
+        - {x: 13.5, y: -17}
+        - {x: 11.5, y: -19}
+    - name: chicken peck 2_25
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 231
+        width: 66
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 26}
+        - {x: -33, y: 26}
+        - {x: -33, y: -16}
+        - {x: -29, y: -26}
+        - {x: 20, y: -26}
+        - {x: 29, y: -24}
+        - {x: 33, y: -15}
+        - {x: 33, y: 15}
+    - name: chicken peck 2_26
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 231
+        width: 67
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 20.5}
+        - {x: -15.5, y: 25.5}
+        - {x: -30.5, y: 25.5}
+        - {x: -33.5, y: 21.5}
+        - {x: -33.5, y: -0.5}
+        - {x: -24.5, y: -24.5}
+        - {x: -20.5, y: -25.5}
+        - {x: 30.5, y: -25.5}
+        - {x: 31.5, y: -24.5}
+        - {x: 33.5, y: -17.5}
+        - {x: 33.5, y: 5.5}
+    - name: chicken peck 2_27
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 231
+        width: 62
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 25}
+        - {x: -31, y: -11}
+        - {x: -28, y: -25}
+        - {x: 13, y: -25}
+        - {x: 31, y: 0}
+        - {x: 31, y: 21}
+        - {x: 20, y: 25}
+    - name: chicken peck 2_28
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 231
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 29.5}
+        - {x: -28.5, y: 24.5}
+        - {x: -28.5, y: -14.5}
+        - {x: -21.5, y: -29.5}
+        - {x: 16.5, y: -29.5}
+        - {x: 28.5, y: 8.5}
+        - {x: 28.5, y: 29.5}
+    - name: chicken peck 2_29
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 231
+        width: 54
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 31}
+        - {x: -27, y: 23}
+        - {x: -27, y: -20}
+        - {x: -20, y: -31}
+        - {x: 23, y: -31}
+        - {x: 27, y: -20}
+        - {x: 27, y: 31}
+    - name: chicken peck 2_30
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 121
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 31.5}
+        - {x: -7, y: 31.5}
+        - {x: -26, y: 19.5}
+        - {x: -26, y: -16.5}
+        - {x: -20, y: -31.5}
+        - {x: 18, y: -31.5}
+        - {x: 19, y: -24.5}
+        - {x: 26, y: -9.5}
+        - {x: 26, y: 29.5}
+    - name: chicken peck 2_31
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 121
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 31.5}
+        - {x: -26, y: 19.5}
+        - {x: -26, y: -15.5}
+        - {x: -19, y: -31.5}
+        - {x: 23, y: -31.5}
+        - {x: 26, y: -18.5}
+        - {x: 26, y: 31.5}
+    - name: chicken peck 2_32
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 121
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 31.5}
+        - {x: -26, y: -15.5}
+        - {x: -16, y: -31.5}
+        - {x: 24, y: -31.5}
+        - {x: 26, y: -20.5}
+        - {x: 26, y: 31.5}
+    - name: chicken peck 2_33
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 121
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 31.5}
+        - {x: -26, y: 29.5}
+        - {x: -26, y: -11.5}
+        - {x: -11, y: -31.5}
+        - {x: 18, y: -31.5}
+        - {x: 23, y: -22.5}
+        - {x: 26, y: -11.5}
+        - {x: 26, y: 31.5}
+    - name: chicken peck 2_34
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 121
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 31.5}
+        - {x: 1, y: 22.5}
+        - {x: -20, y: 17.5}
+        - {x: -26, y: 13.5}
+        - {x: -26, y: -12.5}
+        - {x: -8, y: -31.5}
+        - {x: 18, y: -31.5}
+        - {x: 26, y: -18.5}
+        - {x: 26, y: 31.5}
+    - name: chicken peck 2_35
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 121
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 31.5}
+        - {x: -26, y: -16.5}
+        - {x: -10, y: -31.5}
+        - {x: 18, y: -31.5}
+        - {x: 23, y: -22.5}
+        - {x: 26, y: -9.5}
+        - {x: 26, y: 31.5}
+    - name: chicken peck 2_36
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 11
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 31.5}
+        - {x: -26, y: 20.5}
+        - {x: -26, y: -10.5}
+        - {x: -12, y: -27.5}
+        - {x: -7, y: -31.5}
+        - {x: 22, y: -31.5}
+        - {x: 26, y: -19.5}
+        - {x: 26, y: 31.5}
+    - name: chicken peck 2_37
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 11
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 31.5}
+        - {x: -26.5, y: 16.5}
+        - {x: -26.5, y: -24.5}
+        - {x: -18.5, y: -31.5}
+        - {x: 26.5, y: -31.5}
+        - {x: 26.5, y: 30.5}
+        - {x: 25.5, y: 31.5}
+    - name: chicken peck 2_38
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 11
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken peck 2_39
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 11
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: b2c16e1ec9dd85744922e578d02bf319
+timeCreated: 1457409361
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: red walk 2_0
+    21300002: red walk 2_1
+    21300004: red walk 2_2
+    21300006: red walk 2_3
+    21300008: red walk 2_4
+    21300010: red walk 2_5
+    21300012: red walk 2_6
+    21300014: red walk 2_7
+    21300016: red walk 2_8
+    21300018: red walk 2_9
+    21300020: red walk 2_10
+    21300022: red walk 2_11
+    21300024: red walk 2_12
+    21300026: red walk 2_13
+    21300028: red walk 2_14
+    21300030: red walk 2_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: red walk 2_0
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 831
+        width: 60
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: -22.5}
+        - {x: 30, y: 36.5}
+        - {x: -23, y: 36.5}
+        - {x: -30, y: 34.5}
+        - {x: -30, y: -17.5}
+        - {x: -16, y: -36.5}
+        - {x: 3, y: -36.5}
+        - {x: 9, y: -34.5}
+        - {x: 29, y: -27.5}
+    - name: red walk 2_1
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 831
+        width: 60
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 36.5}
+        - {x: -30, y: 33.5}
+        - {x: -30, y: 8.5}
+        - {x: -19, y: -36.5}
+        - {x: 26, y: -36.5}
+        - {x: 30, y: -31.5}
+        - {x: 30, y: 33.5}
+        - {x: 27, y: 36.5}
+    - name: red walk 2_2
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 832
+        width: 60
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 36}
+        - {x: -30, y: -36}
+        - {x: 20, y: -36}
+        - {x: 30, y: -28}
+        - {x: 30, y: 34}
+        - {x: 28, y: 36}
+    - name: red walk 2_3
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 833
+        width: 64
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: -28}
+        - {x: 32, y: -24}
+        - {x: 32, y: 36}
+        - {x: -32, y: 36}
+        - {x: -32, y: -4}
+        - {x: -24, y: -36}
+        - {x: 16, y: -36}
+        - {x: 14, y: -30}
+        - {x: 12, y: -27}
+        - {x: 7, y: -25}
+    - name: red walk 2_4
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 580
+        width: 75
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.5, y: 35.5}
+        - {x: -21.5, y: 35.5}
+        - {x: -37.5, y: 23.5}
+        - {x: -37.5, y: 0.5}
+        - {x: -27.5, y: -21.5}
+        - {x: -11.5, y: -35.5}
+        - {x: 19.5, y: -35.5}
+        - {x: 37.5, y: -32.5}
+        - {x: 37.5, y: -9.5}
+        - {x: 35.5, y: -7.5}
+    - name: red walk 2_5
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 579
+        width: 87
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.5, y: 36}
+        - {x: -43.5, y: -26}
+        - {x: -40.5, y: -34}
+        - {x: -28.5, y: -36}
+        - {x: 33.5, y: -36}
+        - {x: 43.5, y: -30}
+        - {x: 43.5, y: 36}
+    - name: red walk 2_6
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 578
+        width: 92
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 36.5}
+        - {x: -35, y: 22.5}
+        - {x: -46, y: 7.5}
+        - {x: -46, y: -25.5}
+        - {x: -21, y: -36.5}
+        - {x: 44, y: -36.5}
+        - {x: 46, y: -34.5}
+        - {x: 46, y: 19.5}
+        - {x: 34, y: 36.5}
+    - name: red walk 2_7
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 578
+        width: 93
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 36.5}
+        - {x: -41.5, y: 35.5}
+        - {x: -46.5, y: 20.5}
+        - {x: -46.5, y: -2.5}
+        - {x: -44.5, y: -6.5}
+        - {x: -26.5, y: -23.5}
+        - {x: -11.5, y: -36.5}
+        - {x: 24.5, y: -36.5}
+        - {x: 46.5, y: -6.5}
+        - {x: 46.5, y: 23.5}
+        - {x: 31.5, y: 36.5}
+    - name: red walk 2_8
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 324
+        width: 93
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 36.5}
+        - {x: -46.5, y: 18.5}
+        - {x: -46.5, y: -2.5}
+        - {x: -44.5, y: -3.5}
+        - {x: -13.5, y: -36.5}
+        - {x: 34.5, y: -36.5}
+        - {x: 46.5, y: -7.5}
+        - {x: 46.5, y: 28.5}
+        - {x: 30.5, y: 36.5}
+    - name: red walk 2_9
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 324
+        width: 93
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 36.5}
+        - {x: -46.5, y: 18.5}
+        - {x: -46.5, y: -2.5}
+        - {x: -44.5, y: -3.5}
+        - {x: -13.5, y: -36.5}
+        - {x: 34.5, y: -36.5}
+        - {x: 46.5, y: -7.5}
+        - {x: 46.5, y: 28.5}
+        - {x: 30.5, y: 36.5}
+    - name: red walk 2_10
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 324
+        width: 93
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 36.5}
+        - {x: -46.5, y: 18.5}
+        - {x: -46.5, y: -2.5}
+        - {x: -44.5, y: -3.5}
+        - {x: -13.5, y: -36.5}
+        - {x: 34.5, y: -36.5}
+        - {x: 46.5, y: -7.5}
+        - {x: 46.5, y: 28.5}
+        - {x: 30.5, y: 36.5}
+    - name: red walk 2_11
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 324
+        width: 93
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 36.5}
+        - {x: -46.5, y: 18.5}
+        - {x: -46.5, y: -2.5}
+        - {x: -44.5, y: -3.5}
+        - {x: -13.5, y: -36.5}
+        - {x: 34.5, y: -36.5}
+        - {x: 46.5, y: -7.5}
+        - {x: 46.5, y: 28.5}
+        - {x: 30.5, y: 36.5}
+    - name: red walk 2_12
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 70
+        width: 93
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 36.5}
+        - {x: -46.5, y: 18.5}
+        - {x: -46.5, y: -2.5}
+        - {x: -44.5, y: -3.5}
+        - {x: -13.5, y: -36.5}
+        - {x: 34.5, y: -36.5}
+        - {x: 46.5, y: -7.5}
+        - {x: 46.5, y: 28.5}
+        - {x: 30.5, y: 36.5}
+    - name: red walk 2_13
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 70
+        width: 93
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 36.5}
+        - {x: -46.5, y: 18.5}
+        - {x: -46.5, y: -2.5}
+        - {x: -44.5, y: -3.5}
+        - {x: -13.5, y: -36.5}
+        - {x: 34.5, y: -36.5}
+        - {x: 46.5, y: -7.5}
+        - {x: 46.5, y: 28.5}
+        - {x: 30.5, y: 36.5}
+    - name: red walk 2_14
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 70
+        width: 93
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 36.5}
+        - {x: -46.5, y: 18.5}
+        - {x: -46.5, y: -2.5}
+        - {x: -44.5, y: -3.5}
+        - {x: -13.5, y: -36.5}
+        - {x: 34.5, y: -36.5}
+        - {x: 46.5, y: -7.5}
+        - {x: 46.5, y: 28.5}
+        - {x: 30.5, y: 36.5}
+    - name: red walk 2_15
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 70
+        width: 93
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 36.5}
+        - {x: -46.5, y: 18.5}
+        - {x: -46.5, y: -2.5}
+        - {x: -44.5, y: -3.5}
+        - {x: -13.5, y: -36.5}
+        - {x: 34.5, y: -36.5}
+        - {x: 46.5, y: -7.5}
+        - {x: 46.5, y: 28.5}
+        - {x: 30.5, y: 36.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

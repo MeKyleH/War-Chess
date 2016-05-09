@@ -1,0 +1,726 @@
+fileFormatVersion: 2
+guid: 23fc76c62578f0342a0f9087a79075e3
+timeCreated: 1458093545
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: chicken idle 1_0
+    21300002: chicken idle 1_1
+    21300004: chicken idle 1_2
+    21300006: chicken idle 1_3
+    21300008: chicken idle 1_4
+    21300010: chicken idle 1_5
+    21300012: chicken idle 1_6
+    21300014: chicken idle 1_7
+    21300016: chicken idle 1_8
+    21300018: chicken idle 1_9
+    21300020: chicken idle 1_10
+    21300022: chicken idle 1_11
+    21300024: chicken idle 1_12
+    21300026: chicken idle 1_13
+    21300028: chicken idle 1_14
+    21300030: chicken idle 1_15
+    21300032: chicken idle 1_16
+    21300034: chicken idle 1_17
+    21300036: chicken idle 1_18
+    21300038: chicken idle 1_19
+    21300040: chicken idle 1_20
+    21300042: chicken idle 1_21
+    21300044: chicken idle 1_22
+    21300046: chicken idle 1_23
+    21300048: chicken idle 1_24
+    21300050: chicken idle 1_25
+    21300052: chicken idle 1_26
+    21300054: chicken idle 1_27
+    21300056: chicken idle 1_28
+    21300058: chicken idle 1_29
+    21300060: chicken idle 1_30
+    21300062: chicken idle 1_31
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: chicken idle 1_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 561
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 561
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: 31.5}
+        - {x: -22.5, y: 22.5}
+        - {x: -26.5, y: 15.5}
+        - {x: -26.5, y: -18.5}
+        - {x: -18.5, y: -31.5}
+        - {x: 20.5, y: -31.5}
+        - {x: 26.5, y: -14.5}
+        - {x: 26.5, y: 31.5}
+    - name: chicken idle 1_2
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 561
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.5, y: 31.5}
+        - {x: -23.5, y: 22.5}
+        - {x: -27.5, y: 15.5}
+        - {x: -27.5, y: -19.5}
+        - {x: -20.5, y: -31.5}
+        - {x: 18.5, y: -31.5}
+        - {x: 27.5, y: 7.5}
+        - {x: 27.5, y: 31.5}
+    - name: chicken idle 1_3
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 561
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31}
+        - {x: -23.5, y: 21}
+        - {x: -28.5, y: 15}
+        - {x: -28.5, y: -9}
+        - {x: -27.5, y: -12}
+        - {x: -11.5, y: -31}
+        - {x: 15.5, y: -31}
+        - {x: 28.5, y: -4}
+        - {x: 28.5, y: 29}
+        - {x: 27.5, y: 31}
+    - name: chicken idle 1_4
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 561
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31}
+        - {x: -23.5, y: 21}
+        - {x: -28.5, y: 15}
+        - {x: -28.5, y: -9}
+        - {x: -27.5, y: -12}
+        - {x: -11.5, y: -31}
+        - {x: 15.5, y: -31}
+        - {x: 28.5, y: -4}
+        - {x: 28.5, y: 29}
+        - {x: 27.5, y: 31}
+    - name: chicken idle 1_5
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 561
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 26}
+        - {x: -31.5, y: 26}
+        - {x: -31.5, y: -26}
+        - {x: 31.5, y: -26}
+        - {x: 31.5, y: 0}
+        - {x: 24.5, y: 16}
+    - name: chicken idle 1_6
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 451
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 26}
+        - {x: -31.5, y: 26}
+        - {x: -31.5, y: -26}
+        - {x: 31.5, y: -26}
+        - {x: 31.5, y: 0}
+        - {x: 24.5, y: 16}
+    - name: chicken idle 1_7
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 451
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.5, y: 13}
+        - {x: -10.5, y: 26}
+        - {x: -31.5, y: 26}
+        - {x: -31.5, y: -8}
+        - {x: -26.5, y: -26}
+        - {x: 9.5, y: -26}
+        - {x: 11.5, y: -19}
+        - {x: 19.5, y: -26}
+        - {x: 31.5, y: -26}
+    - name: chicken idle 1_8
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 451
+        width: 64
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: -17}
+        - {x: 20, y: -25}
+        - {x: 23, y: -24}
+        - {x: 32, y: -17}
+        - {x: 32, y: 5}
+        - {x: -6, y: 26}
+        - {x: -32, y: 26}
+        - {x: -32, y: -4}
+        - {x: -25, y: -26}
+        - {x: 9, y: -26}
+        - {x: 10, y: -22}
+        - {x: 10, y: -19}
+        - {x: 3, y: -15}
+    - name: chicken idle 1_9
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 451
+        width: 66
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 17.5}
+        - {x: -1, y: 18.5}
+        - {x: -16, y: 25.5}
+        - {x: -32, y: 25.5}
+        - {x: -33, y: 23.5}
+        - {x: -33, y: -7.5}
+        - {x: -23, y: -23.5}
+        - {x: -19, y: -25.5}
+        - {x: 28, y: -25.5}
+        - {x: 33, y: -21.5}
+        - {x: 33, y: 1.5}
+    - name: chicken idle 1_10
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 451
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31, y: 24}
+        - {x: -32, y: 24}
+        - {x: -32, y: 2}
+        - {x: -18, y: -23}
+        - {x: -16, y: -24}
+        - {x: 12, y: -24}
+        - {x: 15, y: -20}
+        - {x: 32, y: -9}
+        - {x: 32, y: 21}
+    - name: chicken idle 1_11
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 451
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 31.5}
+        - {x: -26, y: 19.5}
+        - {x: -26, y: -15.5}
+        - {x: -19, y: -31.5}
+        - {x: 23, y: -31.5}
+        - {x: 26, y: -18.5}
+        - {x: 26, y: 31.5}
+    - name: chicken idle 1_12
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 341
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 31.5}
+        - {x: -1, y: 31.5}
+        - {x: -26, y: 18.5}
+        - {x: -26, y: -16.5}
+        - {x: -20, y: -31.5}
+        - {x: 19, y: -31.5}
+        - {x: 22, y: -27.5}
+        - {x: 26, y: -17.5}
+    - name: chicken idle 1_13
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 341
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 31.5}
+        - {x: -1, y: 31.5}
+        - {x: -26, y: 18.5}
+        - {x: -26, y: -16.5}
+        - {x: -20, y: -31.5}
+        - {x: 19, y: -31.5}
+        - {x: 22, y: -27.5}
+        - {x: 26, y: -17.5}
+    - name: chicken idle 1_14
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 341
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 31.5}
+        - {x: -1, y: 31.5}
+        - {x: -26, y: 18.5}
+        - {x: -26, y: -16.5}
+        - {x: -20, y: -31.5}
+        - {x: 19, y: -31.5}
+        - {x: 22, y: -27.5}
+        - {x: 26, y: -17.5}
+    - name: chicken idle 1_15
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 341
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 31.5}
+        - {x: -26, y: 24.5}
+        - {x: -26, y: -10.5}
+        - {x: -10, y: -31.5}
+        - {x: 22, y: -31.5}
+        - {x: 26, y: -30.5}
+        - {x: 26, y: 31.5}
+    - name: chicken idle 1_16
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 341
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 31.5}
+        - {x: -26, y: 26.5}
+        - {x: -26, y: -12.5}
+        - {x: -9, y: -31.5}
+        - {x: 24, y: -31.5}
+        - {x: 26, y: -19.5}
+        - {x: 26, y: 31.5}
+    - name: chicken idle 1_17
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 341
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 31.5}
+        - {x: 0, y: 23.5}
+        - {x: -16, y: 19.5}
+        - {x: -26, y: 16.5}
+        - {x: -26, y: -11.5}
+        - {x: -10, y: -31.5}
+        - {x: 18, y: -31.5}
+        - {x: 24, y: -21.5}
+        - {x: 26, y: -15.5}
+        - {x: 26, y: 31.5}
+    - name: chicken idle 1_18
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 231
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 31.5}
+        - {x: -26, y: -28.5}
+        - {x: -17, y: -31.5}
+        - {x: 18, y: -31.5}
+        - {x: 23, y: -22.5}
+        - {x: 26, y: -11.5}
+        - {x: 26, y: 31.5}
+    - name: chicken idle 1_19
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 231
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 31.5}
+        - {x: -23, y: 22.5}
+        - {x: -26, y: 16.5}
+        - {x: -26, y: -16.5}
+        - {x: -10, y: -31.5}
+        - {x: 22, y: -31.5}
+        - {x: 26, y: -19.5}
+        - {x: 26, y: 29.5}
+        - {x: 23, y: 31.5}
+    - name: chicken idle 1_20
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 231
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: -11.5}
+        - {x: -12, y: -31.5}
+        - {x: 22, y: -31.5}
+        - {x: 26, y: -19.5}
+        - {x: 26, y: 31.5}
+        - {x: -24, y: 31.5}
+        - {x: -26, y: 30.5}
+    - name: chicken idle 1_21
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 231
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 31.5}
+        - {x: -26.5, y: 16.5}
+        - {x: -26.5, y: -24.5}
+        - {x: -18.5, y: -31.5}
+        - {x: 26.5, y: -31.5}
+        - {x: 26.5, y: 30.5}
+        - {x: 25.5, y: 31.5}
+    - name: chicken idle 1_22
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 231
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_23
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 231
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_24
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 121
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_25
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 121
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_26
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 121
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_27
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 121
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_28
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 121
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_29
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 121
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_30
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 11
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    - name: chicken idle 1_31
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 11
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 31.5}
+        - {x: 3.5, y: 30.5}
+        - {x: -22.5, y: 24.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -26.5, y: -13.5}
+        - {x: -8.5, y: -31.5}
+        - {x: 22.5, y: -31.5}
+        - {x: 26.5, y: -21.5}
+        - {x: 26.5, y: 26.5}
+        - {x: 23.5, y: 31.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
