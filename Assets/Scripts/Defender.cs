@@ -3,15 +3,15 @@ using System.Collections;
 
 public class Defender : MonoBehaviour {
 
-	public int starCost = 1;
+	public int goldCost = 1;
 
-	private StarDisplay starDisplay;
+	private GoldDisplay goldDisplay;
 
 	void Start() {
-		starDisplay = GameObject.FindObjectOfType<StarDisplay> ();
+		goldDisplay = GameObject.FindObjectOfType<GoldDisplay> ();
 	}
 
-	public void AddStars(int amount) {
-		starDisplay.AddStars (amount);
+	public void AddGold(int amount) {
+		goldDisplay.AddGold (amount);
 	}
 }

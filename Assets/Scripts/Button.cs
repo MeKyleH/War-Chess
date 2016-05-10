@@ -17,7 +17,7 @@ public class Button : MonoBehaviour {
 		if (!costText) {
 			Debug.LogWarning (name + " has no cost");
 		}
-		costText.text = defenderPrefab.GetComponent<Defender>().starCost.ToString();
+		costText.text = defenderPrefab.GetComponent<Defender>().goldCost.ToString();
 	}
 
 	void OnMouseDown() {

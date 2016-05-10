@@ -3,26 +3,26 @@ using UnityEngine.UI;
 using System.Collections;
 
 [RequireComponent (typeof(Text))]
-public class StarDisplay : MonoBehaviour {
+public class GoldDisplay : MonoBehaviour {
 
-	private Text starText;
-	private int stars = 15;
+	private Text goldText;
+	private int gold = 15;
 	public enum Status {SUCCESS, FAILURE};
 
 	// Use this for initialization
 	void Start () {
-		starText = GetComponent<Text> ();
+		goldText = GetComponent<Text> ();
 		UpdateDisplay ();
 	}
 
-	public void AddStars(int amount) {
-		stars += amount;
+	public void AddGold(int amount) {
+		gold += amount;
 		UpdateDisplay ();
 	}
 
-	public Status UseStars(int amount) {
-		if (stars >= amount) {
-			stars -= amount;
+	public Status UseGold(int amount) {
+		if (gold >= amount) {
+			gold -= amount;
 			UpdateDisplay ();
 			return Status.SUCCESS;
 		}
@@ -30,6 +30,6 @@ public class StarDisplay : MonoBehaviour {
 	}
 
 	private void UpdateDisplay(){
-		starText.text = stars.ToString ();
+		goldText.text = gold.ToString ();
 	}
 }
