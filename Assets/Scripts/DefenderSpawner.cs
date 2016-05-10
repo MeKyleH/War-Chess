@@ -6,11 +6,11 @@ public class DefenderSpawner : MonoBehaviour {
 	public Camera myCamera;
 
 	private GameObject parent;
-	private GoldDisplay goldDisplay;
+	private StarDisplay starDisplay;
 
 	void Start() {
 		parent = GameObject.Find ("Defenders");
-		goldDisplay = GameObject.FindObjectOfType<GoldDisplay> ();
+		starDisplay = GameObject.FindObjectOfType<StarDisplay> ();
 
 		if (!parent) {
 			parent = new GameObject ("Defenders");
@@ -19,15 +19,14 @@ public class DefenderSpawner : MonoBehaviour {
 
 	void OnMouseDown() {
 		Vector2 rawPos = CalculateWorldPointOfMouseClick ();
-		Debug.Log ("rawPos: " + rawPos);
 		Vector2 roundedPos = SnapToGrid (rawPos);
 		GameObject defender = Button.selectedDefender;
 
 		int defenderCost = defender.GetComponent<Defender>().starCost;
-		if (goldDisplay.UseGold (defenderCost) == GoldDisplay.Status.SUCCESS) {
+		if (starDisplay.UseStars (defenderCost) == StarDisplay.Status.SUCCESS) {
 			SpawnDefender (roundedPos, defender);
 		} else {
-			Debug.Log ("Insufficient gold to spawn");
+			Debug.Log ("Insufficient stars to spawn");
 		}
 	}
 

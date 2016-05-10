@@ -5,13 +5,13 @@ public class Defender : MonoBehaviour {
 
 	public int starCost = 1;
 
-	private GoldDisplay starDisplay;
+	private StarDisplay starDisplay;
 
 	void Start() {
-		starDisplay = GameObject.FindObjectOfType<GoldDisplay> ();
+		starDisplay = GameObject.FindObjectOfType<StarDisplay> ();
 	}
 
 	public void AddStars(int amount) {
-		starDisplay.AddGold (amount);
+		starDisplay.AddStars (amount);
 	}
 }
