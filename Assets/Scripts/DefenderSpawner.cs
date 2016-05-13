@@ -7,11 +7,12 @@ public class DefenderSpawner : MonoBehaviour {
 
 	private GameObject parent;
 	private GoldDisplay goldDisplay;
+	private TurnManager turnManager;
 
 	void Start() {
 		parent = GameObject.Find ("Defenders");
 		goldDisplay = GameObject.FindObjectOfType<GoldDisplay> ();
-
+		turnManager = GameObject.FindObjectOfType<TurnManager> ();
 		if (!parent) {
 			parent = new GameObject ("Defenders");
 		}
@@ -26,6 +27,7 @@ public class DefenderSpawner : MonoBehaviour {
 		int defenderCost = defender.GetComponent<Defender>().goldCost;
 		if (goldDisplay.UseGold (defenderCost) == GoldDisplay.Status.SUCCESS) {
 			SpawnDefender (roundedPos, defender);
+			turnManager.EndTurn ();
 		} else {
 			Debug.Log ("Insufficient gold to spawn");
 		}
