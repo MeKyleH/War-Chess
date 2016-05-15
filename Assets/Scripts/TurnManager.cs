@@ -36,6 +36,9 @@ public class TurnManager : MonoBehaviour {
 
 	public void TakeGold() {
 		goldDisplay.AddGold (1);
+		buyButton.SetActive (true);
+		buyMenu.SetActive (false);
+		moveButton.SetActive (false);
 		isBuyMode = false;
 		EndTurn ();
 	}

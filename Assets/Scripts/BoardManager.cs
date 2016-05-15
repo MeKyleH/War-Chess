@@ -4,30 +4,22 @@ using System.Collections.Generic;
 
 public class BoardManager : MonoBehaviour {
 	public static BoardManager Instance{ set; get; }
-	private bool [,] allowedMoves{ set; get; }
-
 	public Chessman[,] Chessmans{ set; get; }
 	public bool isWhiteTurn = true;
 	public bool isBuyMode = false;
-
-	public Chessman selectedChessman;
+	public List<GameObject> chessmanPrefabs;
+	public Material selectedMat;
+	public int[] EnPassantMove{ set; get;}
 
 	private const float TILE_SIZE = 1.0f;
 	private const float TILE_OFFSET = 0.5f;
 	private Quaternion orientation = Quaternion.Euler(0, 180, 0);
-
-	//tile selection
+	private bool [,] allowedMoves{ set; get; }
 	private int selectionX = -1;
 	private int selectionY = -1;
-
-	public List<GameObject> chessmanPrefabs;
+	private Chessman selectedChessman;
 	private List<GameObject> activeChessman;
-
 	private Material previousMat;
-	public Material selectedMat;
-
-	public int[] EnPassantMove{ set; get;}
-
 	private TurnManager turnManager;
 	private GoldDisplay goldDisplay;
 
@@ -48,12 +40,20 @@ public class BoardManager : MonoBehaviour {
 		UpdateSelection ();
 		if (Input.GetMouseButtonDown (0)) {
 			if (selectionX >= 0 && selectionY >= 0) {
-				if (selectedChessman == null) {
-					//select the chessman
-					SelectChessman(selectionX, selectionY);
-				} else {
-					//move the chessman
-					MoveChessman(selectionX, selectionY);
+				//BUY MODE
+				if (isBuyMode) {
+					
+
+				} 
+				//NOT BUY MODE
+				else {
+					if (selectedChessman == null) {
+						//select the chessman
+						SelectChessman (selectionX, selectionY);
+					} else {
+						//move the chessman
+						MoveChessman (selectionX, selectionY);
+					}
 				}
 			}
 		}
