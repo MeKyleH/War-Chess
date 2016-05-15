@@ -29,6 +29,11 @@ public class GoldDisplay : MonoBehaviour {
 		return Status.FAILURE;
 	}
 
+	public void ResetGold() {
+		gold = 15;
+		UpdateDisplay ();
+	}
+
 	private void UpdateDisplay(){
 		goldText.text = gold.ToString ();
 	}

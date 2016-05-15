@@ -29,6 +29,7 @@ public class BoardManager : MonoBehaviour {
 	public int[] EnPassantMove{ set; get;}
 
 	private TurnManager turnManager;
+	private GoldDisplay goldDisplay;
 
 	private void Start() {
 		Instance = this;
@@ -36,12 +37,15 @@ public class BoardManager : MonoBehaviour {
 		if (!turnManager) {
 			Debug.Log (name + " couldn't find TurnManager");
 		}
+		goldDisplay = GameObject.FindObjectOfType<GoldDisplay> ();
+		if (!goldDisplay) {
+			Debug.Log (name + " couldn't find GoldDisplay");
+		}
 		SpawnAllChessmans ();
 	}
 
 	private void Update () {
 		UpdateSelection ();
-		DrawChessboard ();
 		if (Input.GetMouseButtonDown (0)) {
 			if (selectionX >= 0 && selectionY >= 0) {
 				if (selectedChessman == null) {
@@ -56,7 +60,6 @@ public class BoardManager : MonoBehaviour {
 	}
 
 	private void SelectChessman(int x, int y) {
-		Debug.Log ("Selecting chessman");
 		if (x == -1 || y == -1) {
 			return;
 		}
@@ -265,31 +268,6 @@ public class BoardManager : MonoBehaviour {
 		return origin;	
 	}
 
-	private void DrawChessboard() {
-		Vector3 widthLine = Vector3.right * 8;
-		Vector3 heightLine = Vector3.forward * 8;
-
-		for (int i = 0; i <= 8; i++) {
-			Vector3 start = Vector3.forward * i;
-			Debug.DrawLine (start, start + widthLine);
-			for (int j = 0; j <= 8; j++) {
-				start = Vector3.right * j;
-				Debug.DrawLine (start, start + heightLine);
-			}
-		}
-
-		// Draw the selected tile
-		if (selectionX >= 0 && selectionY >= 0) {
-			Debug.DrawLine (
-				Vector3.forward * selectionY + Vector3.right * selectionX, 
-				Vector3.forward * (selectionY + 1) + Vector3.right * (selectionX + 1));
-
-			Debug.DrawLine (
-				Vector3.forward * (selectionY +1) + Vector3.right * selectionX, 
-				Vector3.forward * selectionY + Vector3.right * (selectionX + 1));		
-		}
-	}
-
 	private void EndGame() {
 		if (isWhiteTurn) {
 			Debug.Log ("White team wins");
@@ -303,6 +281,6 @@ public class BoardManager : MonoBehaviour {
 		isWhiteTurn = true;
 		BoardHighlights.Instance.HideHighlights ();
 		SpawnAllChessmans ();
-		
+		goldDisplay.ResetGold ();
 	}
 }
