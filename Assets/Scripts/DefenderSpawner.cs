@@ -18,7 +18,7 @@ public class DefenderSpawner : MonoBehaviour {
 		}
 	}
 
-	void OnMouseDown() {
+/*	void OnMouseDown() {
 		Vector2 rawPos = CalculateWorldPointOfMouseClick ();
 		Vector2 roundedPos = SnapToGrid (rawPos);
 		Debug.Log ("roundedPos: " + roundedPos);
@@ -31,7 +31,7 @@ public class DefenderSpawner : MonoBehaviour {
 		} else {
 			Debug.Log ("Insufficient gold to spawn");
 		}
-	}
+	}*/
 
 	void SpawnDefender (Vector2 roundedPos, GameObject defender)
 	{

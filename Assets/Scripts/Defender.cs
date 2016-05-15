@@ -4,6 +4,7 @@ using System.Collections;
 public class Defender : MonoBehaviour {
 
 	public int goldCost = 1;
+	public int spawnIndex;
 
 	private GoldDisplay goldDisplay;
 

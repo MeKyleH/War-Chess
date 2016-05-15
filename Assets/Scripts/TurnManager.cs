@@ -9,8 +9,6 @@ public class TurnManager : MonoBehaviour {
 	public GoldDisplay goldDisplay;
 	public GameObject moveButton;
 
-	public bool isBuyMode = false;
-
 	private BoardManager boardManager;
 
 	private void Start() {
@@ -24,14 +22,14 @@ public class TurnManager : MonoBehaviour {
 		buyMenu.SetActive (true);
 		moveButton.SetActive (true);
 		buyButton.SetActive (false);
-		isBuyMode = true;
+		boardManager.isBuyMode = true;
 	}
 
 	public void MovePiece() {
 		buyButton.SetActive (true);
 		buyMenu.SetActive (false);
 		moveButton.SetActive (false);
-		isBuyMode = false;
+		boardManager.isBuyMode = false;
 	}
 
 	public void TakeGold() {
@@ -39,7 +37,7 @@ public class TurnManager : MonoBehaviour {
 		buyButton.SetActive (true);
 		buyMenu.SetActive (false);
 		moveButton.SetActive (false);
-		isBuyMode = false;
+		boardManager.isBuyMode = false;
 		EndTurn ();
 	}
 
@@ -47,5 +45,6 @@ public class TurnManager : MonoBehaviour {
 		boardManager.isWhiteTurn = !boardManager.isWhiteTurn;
 		boardManager.EnPassantMove.SetValue (-1, 0);
 		boardManager.UnselectChessman ();
+		MovePiece ();
 	}
 }

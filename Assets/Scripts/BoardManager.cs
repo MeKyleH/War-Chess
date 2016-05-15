@@ -39,21 +39,35 @@ public class BoardManager : MonoBehaviour {
 	private void Update () {
 		UpdateSelection ();
 		if (Input.GetMouseButtonDown (0)) {
-			if (selectionX >= 0 && selectionY >= 0) {
-				//BUY MODE
-				if (isBuyMode) {
-					
+			ProcessClick ();
+		}
+	}
 
-				} 
-				//NOT BUY MODE
+	private void ProcessClick ()
+	{
+		if (selectionX >= 0 && selectionY >= 0) {
+			//BUY MODE
+			if (isBuyMode) {
+				Defender defender = Button.selectedDefender;
+				if (!defender) {
+					return;
+				}
+				if (goldDisplay.UseGold (defender.goldCost) == GoldDisplay.Status.SUCCESS) {
+					SpawnChessman (defender.spawnIndex, selectionX, selectionY);
+					turnManager.EndTurn ();
+				} else {
+					Debug.Log ("Not enough gold to buy");
+				}
+			}
+			//NOT BUY MODE
+			else {
+				if (selectedChessman == null) {
+					//select the chessman
+					SelectChessman (selectionX, selectionY);
+				}
 				else {
-					if (selectedChessman == null) {
-						//select the chessman
-						SelectChessman (selectionX, selectionY);
-					} else {
-						//move the chessman
-						MoveChessman (selectionX, selectionY);
-					}
+					//move the chessman
+					MoveChessman (selectionX, selectionY);
 				}
 			}
 		}
