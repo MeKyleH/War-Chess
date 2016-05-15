@@ -20,6 +20,7 @@ public class Button : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
+		Debug.Log ("BUTTON CLICKED!!!!!!");
 		foreach (Button thisButton in buttonArray) {
 			thisButton.GetComponent<SpriteRenderer> ().color = Color.black;
 		}
@@ -27,11 +28,11 @@ public class Button : MonoBehaviour {
 		selectedDefender = whiteDefenderPrefab;
 	}
 
-	void SelectThisButton() {
+	public void SelectThisButton() {
 		foreach (Button thisButton in buttonArray) {
-			thisButton.GetComponent<SpriteRenderer> ().color = Color.black;
+			thisButton.GetComponent<Image> ().color = Color.black;
 		}
-		GetComponent<SpriteRenderer> ().color = Color.white;
+		GetComponent<Image> ().color = Color.white;
 		selectedDefender = whiteDefenderPrefab;
 	}
 }
