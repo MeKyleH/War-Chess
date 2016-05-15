@@ -8,8 +8,9 @@ public class BoardManager : MonoBehaviour {
 
 	public Chessman[,] Chessmans{ set; get; }
 	public bool isWhiteTurn = true;
+	public bool isBuyMode = false;
 
-	private Chessman selectedChessman;
+	public Chessman selectedChessman;
 
 	private const float TILE_SIZE = 1.0f;
 	private const float TILE_OFFSET = 0.5f;
@@ -27,8 +28,14 @@ public class BoardManager : MonoBehaviour {
 
 	public int[] EnPassantMove{ set; get;}
 
+	private TurnManager turnManager;
+
 	private void Start() {
 		Instance = this;
+		turnManager = GameObject.FindObjectOfType<TurnManager> ();
+		if (!turnManager) {
+			Debug.Log (name + " couldn't find TurnManager");
+		}
 		SpawnAllChessmans ();
 	}
 
@@ -36,7 +43,7 @@ public class BoardManager : MonoBehaviour {
 		UpdateSelection ();
 		DrawChessboard ();
 		if (Input.GetMouseButtonDown (0)) {
-			if (selectionX >= 00 && selectionY >= 0) {
+			if (selectionX >= 0 && selectionY >= 0) {
 				if (selectedChessman == null) {
 					//select the chessman
 					SelectChessman(selectionX, selectionY);
@@ -49,6 +56,10 @@ public class BoardManager : MonoBehaviour {
 	}
 
 	private void SelectChessman(int x, int y) {
+		Debug.Log ("Selecting chessman");
+		if (x == -1 || y == -1) {
+			return;
+		}
 		//check if a piece is here
 		if (Chessmans [x, y] == null) {
 			return;
@@ -60,6 +71,7 @@ public class BoardManager : MonoBehaviour {
 		bool hasAtleastOneMove = false;
 		allowedMoves = Chessmans [x, y].PossibleMove ();
 
+		//checks if there is a possible move
 		for (int i = 0; i < 8; i++) {
 			if (hasAtleastOneMove) {
 				break;
@@ -155,6 +167,14 @@ public class BoardManager : MonoBehaviour {
 		selectedChessman.GetComponent<MeshRenderer>().material = previousMat;
 		selectedChessman = null;
 		BoardHighlights.Instance.HideHighlights ();
+	}
+
+	public void UnselectChessman() {
+		if (selectedChessman) {
+			selectedChessman.GetComponent<MeshRenderer> ().material = previousMat;
+			selectedChessman = null;
+			BoardHighlights.Instance.HideHighlights ();
+		}
 	}
 
 	private void UpdateSelection() {

@@ -6,6 +6,7 @@ public class Button : MonoBehaviour {
 
 	public GameObject defenderPrefab; 
 	public static GameObject selectedDefender;
+	public bool isKing = false;
 
 	private Text costText;
 	private Button[] buttonArray;
