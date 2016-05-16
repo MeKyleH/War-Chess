@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: a1660bf7ebc598b468258084b9b005c2
-timeCreated: 1463174391
-licenseType: Free
+guid: 7248632fb471af143947a88a47eae959
+labels:
+- chess
+- board
+- boardgame
+- game
+- chessboard
+- Knight
+timeCreated: 1462534794
+licenseType: Store
 NativeFormatImporter:
   userData: 
   assetBundleName: 

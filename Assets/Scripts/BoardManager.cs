@@ -13,7 +13,7 @@ public class BoardManager : MonoBehaviour {
 
 	private const float TILE_SIZE = 1.0f;
 	private const float TILE_OFFSET = 0.5f;
-	private Quaternion orientation = Quaternion.Euler(0, 180, 0);
+	private Quaternion orientation = Quaternion.Euler(0, 0, 0);
 	private bool [,] allowedMoves{ set; get; }
 	private int selectionX = -1;
 	private int selectionY = -1;
@@ -173,8 +173,10 @@ public class BoardManager : MonoBehaviour {
 					EnPassantMove [1] = y+1;
 				}
 			}
+				
 			Chessmans [selectedChessman.CurrentX, selectedChessman.CurrentY] = null;
-			selectedChessman.transform.position = GetTileCenter (x, y);
+			float previousZ = selectedChessman.transform.position.y;
+			selectedChessman.transform.position = GetTileCenter (x, y, previousZ);
 			selectedChessman.SetPosition (x, y);
 			Chessmans [x, y] = selectedChessman;
 			isWhiteTurn = !isWhiteTurn;
@@ -211,7 +213,13 @@ public class BoardManager : MonoBehaviour {
 
 	private void SpawnChessman(int index, int x, int y) {
 		// creates new piece
-		GameObject go = Instantiate (chessmanPrefabs [index], GetTileCenter(x,y), orientation) as GameObject;
+		float z;
+		if (index == 5 || index ==11) {
+			 z = -0.2f;
+		} else {
+			z = -0.1f;
+		}
+		GameObject go = Instantiate (chessmanPrefabs [index], GetTileCenter(x,y,z), orientation) as GameObject;
 		go.transform.SetParent (transform);
 		Chessmans [x, y] = go.GetComponent<Chessman> ();
 		Chessmans [x, y].SetPosition (x, y);
@@ -274,11 +282,11 @@ public class BoardManager : MonoBehaviour {
 		}
 	}
 
-	private Vector3 GetTileCenter(int x, int y) {
+	private Vector3 GetTileCenter(int x, int y, float z) {
 		Vector3 origin = Vector3.zero;
 		origin.x += (TILE_SIZE * x) + TILE_OFFSET;
 		origin.z += (TILE_SIZE * y) + TILE_OFFSET;
-		origin.y += TILE_OFFSET / 2;
+		origin.y += z;
 		return origin;	
 	}
 

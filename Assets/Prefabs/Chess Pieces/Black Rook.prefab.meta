@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: 24447059508057940b35cc9fb8a0f05e
-timeCreated: 1463174577
-licenseType: Free
+guid: 9d3e9c36668dcfe44b524760a4c3a3b5
+labels:
+- chess
+- board
+- boardgame
+- game
+- chessboard
+- Rook
+timeCreated: 1462534604
+licenseType: Store
 NativeFormatImporter:
   userData: 
   assetBundleName: 

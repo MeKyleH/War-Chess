@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: 0d88d400040d55f4ca0ff723c1393b7f
-timeCreated: 1463174474
-licenseType: Free
+guid: a71fd906a2159e247ab4d632e46947db
+labels:
+- chess
+- board
+- boardgame
+- game
+- chessboard
+- Bishop
+timeCreated: 1462534614
+licenseType: Store
 NativeFormatImporter:
   userData: 
   assetBundleName: 

@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: b5fd43ff4040a574098351b7376273cd
-timeCreated: 1463174352
-licenseType: Free
+guid: 48d5ea4ff810d0e4ea36af7235dd5fd7
+labels:
+- chess
+- board
+- boardgame
+- game
+- chessboard
+- Pawn
+timeCreated: 1462534792
+licenseType: Store
 NativeFormatImporter:
   userData: 
   assetBundleName: 

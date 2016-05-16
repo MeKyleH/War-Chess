@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: d847792d774c1e4479d1451259b26e26
-timeCreated: 1463174420
-licenseType: Free
+guid: 6f38c700bedefe64f8364436528e5c3d
+labels:
+- chess
+- board
+- boardgame
+- game
+- chessboard
+- Queen
+timeCreated: 1462534789
+licenseType: Store
 NativeFormatImporter:
   userData: 
   assetBundleName: 
