@@ -45,6 +45,7 @@ public class TurnManager : MonoBehaviour {
 		boardManager.isWhiteTurn = !boardManager.isWhiteTurn;
 		boardManager.EnPassantMove.SetValue (-1, 0);
 		boardManager.UnselectChessman ();
+//		boardManager.UpdateFog ();
 		MovePiece ();
 	}
 }

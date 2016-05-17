@@ -10,6 +10,8 @@ public class BoardManager : MonoBehaviour {
 	public List<GameObject> chessmanPrefabs;
 	public Material selectedMat;
 	public int[] EnPassantMove{ set; get;}
+	public bool[,] fogLocation = new bool[8,8]; //TODO MAKE THIS PRIVATE
+
 
 	private const float TILE_SIZE = 1.0f;
 	private const float TILE_OFFSET = 0.5f;
@@ -52,11 +54,14 @@ public class BoardManager : MonoBehaviour {
 				if (!defender) {
 					return;
 				}
-				if (goldDisplay.UseGold (defender.goldCost) == GoldDisplay.Status.SUCCESS) {
-					SpawnChessman (defender.spawnIndex, selectionX, selectionY);
-					turnManager.EndTurn ();
-				} else {
-					Debug.Log ("Not enough gold to buy");
+				//lock spawning only to the end two rows
+				if ((isWhiteTurn && selectionY == 0 || selectionY == 1) || (!isWhiteTurn && selectionY == 7 || selectionY == 6)) {
+					if (goldDisplay.UseGold (defender.goldCost) == GoldDisplay.Status.SUCCESS) {
+						SpawnChessman (defender.spawnIndex, selectionX, selectionY);
+						turnManager.EndTurn ();
+					} else {
+						Debug.Log ("Not enough gold to buy");
+					}
 				}
 			}
 			//NOT BUY MODE
@@ -113,6 +118,21 @@ public class BoardManager : MonoBehaviour {
 		BoardHighlights.Instance.HighlightAllowedMoves (allowedMoves);
 	}
 
+/*	public void UpdateFog() {
+		Debug.Log ("INSIDE UPDATE FOG");
+		float startTime = Time.timeSinceLevelLoad;
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if (allowedMoves[i,j] == true) {
+					SpawnChessman (12, i, j);
+				}
+			}
+		}
+		float endTime = Time.timeSinceLevelLoad;
+		Debug.Log (endTime - startTime);
+		Debug.Log ("FOG UPDATED");
+	}
+*/
 	private void MoveChessman(int x, int y) {
 		if (allowedMoves[x,y] == true) {
 			Chessman c = Chessmans [x, y];
@@ -214,8 +234,12 @@ public class BoardManager : MonoBehaviour {
 	private void SpawnChessman(int index, int x, int y) {
 		// creates new piece
 		float z;
-		if (index == 5 || index ==11) {
-			 z = -0.2f;
+		if (index == 13) {
+			z = 0.8f;
+			return;
+		}
+		if (index == 5 || index == 11) {
+			z = -0.2f;
 		} else {
 			z = -0.1f;
 		}
@@ -231,8 +255,7 @@ public class BoardManager : MonoBehaviour {
 		Chessmans = new Chessman[8,8];
 		EnPassantMove = new int[2]{ -1, -1 };
 
-		//Spawn the white team
-
+		//SPAWN WHITE TEAM
 		//King
 		SpawnChessman (0, 3,0);
 
@@ -256,8 +279,7 @@ public class BoardManager : MonoBehaviour {
 			SpawnChessman (5, i,1);
 		}
 
-		//Spawn the Black team
-
+		//SPAWN BLACK TEAM
 		//King
 		SpawnChessman (6, 4,7);
 
