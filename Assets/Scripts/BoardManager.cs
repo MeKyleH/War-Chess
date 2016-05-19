@@ -258,6 +258,10 @@ public class BoardManager : MonoBehaviour {
 	}
 
 	private void SpawnChessman(int index, int x, int y) {
+		//prevents duplicate pieces from spawning
+		if (Chessmans [x, y] != null) {
+			return;
+		}
 		// creates new piece
 		float z;
 		if (index == 13) {
@@ -269,7 +273,8 @@ public class BoardManager : MonoBehaviour {
 		} else {
 			z = -0.1f;
 		}
-		GameObject go = Instantiate (chessmanPrefabs [index], GetTileCenter(x,y,z), orientation) as GameObject;
+
+		GameObject go = PhotonNetwork.Instantiate (chessmanPrefabs [index].name, GetTileCenter(x,y,z), orientation,0) as GameObject;
 		go.transform.SetParent (transform);
 		Chessmans [x, y] = go.GetComponent<Chessman> ();
 		Chessmans [x, y].SetPosition (x, y);
