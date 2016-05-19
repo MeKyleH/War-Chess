@@ -9,7 +9,6 @@ public class MusicManager : MonoBehaviour {
 
 	void Awake() {
 		DontDestroyOnLoad (gameObject);
-		Debug.Log ("Don't destory on load: " + name);
 	}
 	
 	void Start () {
@@ -19,8 +18,7 @@ public class MusicManager : MonoBehaviour {
 	
 	void OnLevelWasLoaded (int level) {
 		AudioClip thisLevelMusic = levelMusicChangeArray[level];
-		Debug.Log ("Playing clip: " + thisLevelMusic);
-		
+
 		if (thisLevelMusic) { // If there's some music attached
 			audioSource.clip = thisLevelMusic;
 			audioSource.volume = PlayerPrefsManager.GetMasterVolume ();
