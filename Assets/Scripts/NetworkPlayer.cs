@@ -34,9 +34,6 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 		} else {
 			position = (Vector3)stream.ReceiveNext ();
 			rotation = (Quaternion)stream.ReceiveNext ();
-
 		}
-
-
 	}
 }

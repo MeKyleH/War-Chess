@@ -37,12 +37,6 @@ public class BoardManager : MonoBehaviour {
 		}
 
 		SetupBoard ();
-/*		if (isNormalGame) {
-			SpawnAllChessmans ();
-		} else {
-			isInitialPlacement = true;
-		}
-*/
 	}
 
 	private void Update () {

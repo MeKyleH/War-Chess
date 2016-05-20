@@ -13,13 +13,14 @@ public class NetworkManager : MonoBehaviour {
 
 	GameObject player;
 
-	private const string VERSION = "0.1";
+	private const string VERSION = "0.2";
 	private ExitGames.Client.Photon.Hashtable customProps;
 
 
 	void Start () {
 		PhotonNetwork.logLevel = PhotonLogLevel.Full;
 		PhotonNetwork.ConnectUsingSettings (VERSION);
+		PhotonNetwork.autoCleanUpPlayerObjects = false;
 	}
 
 	void Update() {
