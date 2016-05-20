@@ -11,9 +11,9 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 	void Start () {
 		if (photonView.isMine) {
 			//ENABLE ANY SETTINGS THAT HAVE BEEN DISABLED FROM THE GENERIC PLAYER PREFAB (DON'T FORGET GRAVITY FOR RIGIDBODIES)
-		
+			GetComponent<Camera>().enabled = true;
 		} else {
-			StartCoroutine ("UpdateData");
+			//StartCoroutine ("UpdateData");
 		}
 	}
 

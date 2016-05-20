@@ -14,7 +14,7 @@ public class NetworkManager : MonoBehaviour {
 	GameObject player;
 
 	private const string VERSION = "0.1";
-	public ExitGames.Client.Photon.Hashtable props;
+	private ExitGames.Client.Photon.Hashtable customProps;
 
 
 	void Start () {
@@ -29,19 +29,17 @@ public class NetworkManager : MonoBehaviour {
 	void OnJoinedLobby() {
 		RoomOptions ro = new RoomOptions () {isVisible = true, maxPlayers = 2};
 		PhotonNetwork.JoinOrCreateRoom (roomName, ro, TypedLobby.Default);
-		//assigns the player to the white team or the black team
-		props = new ExitGames.Client.Photon.Hashtable ();
-
+		customProps = new ExitGames.Client.Photon.Hashtable ();
 	}
 
 	//On initial room Join spawn the player immediately
 	void OnJoinedRoom() {
 		if (PhotonNetwork.isMasterClient) {
-			props.Add ("isWhiteTeam", true);
+			customProps.Add ("isWhiteTeam", true);
 		} else {
-			props.Add ("isWhiteTeam", false);
+			customProps.Add ("isWhiteTeam", false);
 		}
-		PhotonNetwork.player.SetCustomProperties(props);
+		PhotonNetwork.player.SetCustomProperties(customProps);
 		StartSpawnProcess (0f);
 
 		string teamColor = (bool)PhotonNetwork.player.customProperties ["isWhiteTeam"] == true? "WHITE" : "BLACK";
@@ -57,9 +55,11 @@ public class NetworkManager : MonoBehaviour {
 	//spawns the player and disables the lobby camera
 	IEnumerator SpawnPlayer(float respawnTime) {
 		yield return new WaitForSeconds(respawnTime);
-
-		int index = Random.Range (0, spawnPoints.Length);
-		player = PhotonNetwork.Instantiate ("Player Camera",
+		bool isWhiteTeam = (bool)PhotonNetwork.player.customProperties ["isWhiteTeam"] == true;
+	
+		string playerCamera = isWhiteTeam ? "White Player Camera" : "Black Player Camera";
+		int index = isWhiteTeam? 0: 1;
+		player = PhotonNetwork.Instantiate (playerCamera,
 			spawnPoints [index].position,
 			spawnPoints [index].rotation,
 			0);
