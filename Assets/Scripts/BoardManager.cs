@@ -154,7 +154,7 @@ public class BoardManager : MonoBehaviour {
 					return;
 				}
 				activeChessman.Remove(c.gameObject);
-				Destroy (c.gameObject);
+				PhotonNetwork.Destroy (c.gameObject);
 			}
 
 			//reset enPassant
@@ -169,7 +169,7 @@ public class BoardManager : MonoBehaviour {
 				}
 				//DESTROY ENPASSANT PIECE
 				activeChessman.Remove(c.gameObject);
-				Destroy (c.gameObject);
+				PhotonNetwork.Destroy (c.gameObject);
 			}
 			EnPassantMove [0] = -1;
 			EnPassantMove [1] = -1;
@@ -179,13 +179,13 @@ public class BoardManager : MonoBehaviour {
 				//WHITE TEAM
 				if (y == 7) {
 					activeChessman.Remove (selectedChessman.gameObject);
-					Destroy (selectedChessman.gameObject);
+					PhotonNetwork.Destroy (selectedChessman.gameObject);
 					selectedChessman = Chessmans [x, y];
 					SpawnChessman (1, x, y);
 					selectedChessman = Chessmans [x, y];
 				} else if (y == 0) {
 					activeChessman.Remove(selectedChessman.gameObject);
-					Destroy (selectedChessman.gameObject);
+					PhotonNetwork.Destroy (selectedChessman.gameObject);
 					SpawnChessman (7, x, y);
 					selectedChessman = Chessmans [x, y];
 				}
@@ -337,7 +337,7 @@ public class BoardManager : MonoBehaviour {
 			Debug.Log ("Black team wins");
 		}
 		foreach (GameObject go in activeChessman) {
-			Destroy (go);
+			PhotonNetwork.Destroy (go);
 		}
 
 		isWhiteTurn = true;

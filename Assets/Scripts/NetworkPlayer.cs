@@ -6,22 +6,24 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 	Vector3 position;
 	Quaternion rotation;
 	float smoothing = 10f; //higher is slower and more realistic
-
+	BoardManager boardManager;
 
 	void Start () {
+		boardManager = GameObject.FindObjectOfType<BoardManager> ();
+
 		if (photonView.isMine) {
 			//ENABLE ANY SETTINGS THAT HAVE BEEN DISABLED FROM THE GENERIC PLAYER PREFAB (DON'T FORGET GRAVITY FOR RIGIDBODIES)
 			GetComponent<Camera>().enabled = true;
 		} else {
-			//StartCoroutine ("UpdateData");
+			StartCoroutine ("UpdateData");
 		}
 	}
 
 	// Manages the smoothing of the data from other players (photon views)
 	IEnumerator UpdateData() {
 		while(true) {
-			transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime * smoothing);
-			transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * smoothing);
+			//transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime * smoothing);
+			//transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * smoothing);
 			yield return null;
 		}
 	}
@@ -29,11 +31,16 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 	// Sends and receives information from other players (photon views)
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 		if (stream.isWriting) {
-			stream.SendNext (transform.position);
-			stream.SendNext (transform.rotation);
+			//stream.SendNext (transform.position);
+			//stream.SendNext (transform.rotation);
+//			stream.SendNext(boardManager.isWhiteTurn);
+//			Debug.Log ("Sent Message: " + boardManager.isWhiteTurn);
 		} else {
-			position = (Vector3)stream.ReceiveNext ();
-			rotation = (Quaternion)stream.ReceiveNext ();
+			//position = (Vector3)stream.ReceiveNext ();
+			//rotation = (Quaternion)stream.ReceiveNext ();
+//			boardManager.isWhiteTurn = (bool)stream.ReceiveNext();
+//			Debug.Log ("Received Message: " + boardManager.isWhiteTurn);
 		}
 	}
+
 }
