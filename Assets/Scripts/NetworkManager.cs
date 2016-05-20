@@ -15,12 +15,14 @@ public class NetworkManager : MonoBehaviour {
 
 	private const string VERSION = "0.2";
 	private ExitGames.Client.Photon.Hashtable customProps;
-
+	private BoardManager boardManager;
 
 	void Start () {
 		PhotonNetwork.logLevel = PhotonLogLevel.Full;
 		PhotonNetwork.ConnectUsingSettings (VERSION);
 		PhotonNetwork.autoCleanUpPlayerObjects = false;
+
+		boardManager = GameObject.FindObjectOfType<BoardManager> ();
 	}
 
 	void Update() {
@@ -45,6 +47,12 @@ public class NetworkManager : MonoBehaviour {
 
 		string teamColor = (bool)PhotonNetwork.player.customProperties ["isWhiteTeam"] == true? "WHITE" : "BLACK";
 		teamColorText.text = "You are on the " +teamColor+ " Team.";
+
+		if (boardManager.Chessmans[0,0] == null) {
+			Debug.Log ("FOUND CHESSMANS!!!!!!!!!!!!!!!");
+
+			boardManager.SpawnAllChessmans ();
+		}
 	}
 
 	//sets the lobby camera active and prepares to spawn the player

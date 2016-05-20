@@ -265,7 +265,7 @@ public class BoardManager : MonoBehaviour {
 	}
 
 	//Used to spawn a normal game of chess
-	private void SpawnAllChessmans() {
+	public void SpawnAllChessmans() {
 		//SPAWN WHITE TEAM
 		//King
 		SpawnChessman (0, 3,0);
