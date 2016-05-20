@@ -61,7 +61,7 @@ public class BoardManager : MonoBehaviour {
 					return;
 				}
 				//WHITE TURN
-				if (isWhiteTurn && selectionY == 0 || selectionY == 1) {
+				if (isWhiteTurn &&selectionY == 0 || selectionY == 1) {
 					//prevent spawning over an existing piece
 					if (Chessmans [selectionX, selectionY] != null) {
 						return;

@@ -20,6 +20,21 @@ public class GoldDisplay : MonoBehaviour {
 		}
 		goldText = GetComponent<Text> ();
 		UpdateDisplay ();
+	}
+
+	public static T GetCustomProperty<T>(PhotonView view, string property, T offlineValue, T defaultValue) {
+		//checks if the player is offline
+		if (PhotonNetwork.offlineMode == true) {
+			return offlineValue;
+		}
+		//in online mode, get the custom property from the custom properties
+		else {
+			//ensures the value is valid and return it otherwise return the default
+			if (view != null && view.owner != null && view.owner.customProperties.ContainsKey (property) == true) {
+				return(T)view.owner.customProperties [property];
+			}
+			return defaultValue;
+		}
 
 	}
 
