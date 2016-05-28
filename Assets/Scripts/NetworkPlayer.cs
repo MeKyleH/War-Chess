@@ -5,7 +5,6 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 
 	Vector3 position;
 	Quaternion rotation;
-	float smoothing = 10f; //higher is slower and more realistic
 	BoardManager boardManager;
 
 	void Start () {
@@ -31,13 +30,9 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 	// Sends and receives information from other players (photon views)
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 		if (stream.isWriting) {
-			//stream.SendNext (transform.position);
-			//stream.SendNext (transform.rotation);
 //			stream.SendNext(boardManager.isWhiteTurn);
 //			Debug.Log ("Sent Message: " + boardManager.isWhiteTurn);
 		} else {
-			//position = (Vector3)stream.ReceiveNext ();
-			//rotation = (Quaternion)stream.ReceiveNext ();
 //			boardManager.isWhiteTurn = (bool)stream.ReceiveNext();
 //			Debug.Log ("Received Message: " + boardManager.isWhiteTurn);
 		}

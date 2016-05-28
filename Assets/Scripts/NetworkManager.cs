@@ -115,4 +115,8 @@ public class NetworkManager : MonoBehaviour {
 		turnText.text = this.isWhiteTurn ? "White Turn" : "Black Turn";
 	}
 
+	void MovePiece_RPC(){
+
+	}
+
 }
