@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class BoardManager : MonoBehaviour {
 	
-	public bool isWhiteTurn = true;
 	public bool isBuyMode = false;
 	public bool isNormalGame = true;
 	public List<GameObject> chessmanPrefabs;
@@ -74,12 +73,11 @@ public class BoardManager : MonoBehaviour {
 			return;
 		}
 		//WHITE TURN
-		if (isWhiteTurn && (selectionY == 0 || selectionY == 1)) {
+		if (turnManager.isWhiteTurn && (selectionY == 0 || selectionY == 1)) {
 			//prevent spawning over an existing piece
 			if (Chessmans [selectionX, selectionY] != null) {
 				return;
 			}
-			Debug.Log ("isWhiteTurn: " + isWhiteTurn + " selectionY: " + selectionY + " selectionx: " + selectionX);
 			if (goldDisplay.UseGold (defender.goldCost) == GoldDisplay.Status.SUCCESS) {
 				SpawnChessman (defender.spawnIndex, selectionX, selectionY);
 				turnManager.EndTurn ();
@@ -88,7 +86,7 @@ public class BoardManager : MonoBehaviour {
 			}
 		}
 		//BLACK TURN
-		else if (!isWhiteTurn && (selectionY == 7 || selectionY == 6)) {
+		else if (!turnManager.isWhiteTurn && (selectionY == 7 || selectionY == 6)) {
 			//prevent spawning over an existing piece
 			if (Chessmans [selectionX, selectionY] != null) {
 				return;
@@ -111,7 +109,7 @@ public class BoardManager : MonoBehaviour {
 			return;
 		}
 		//check that the piece being selected is your color
-		if (Chessmans [x, y].isWhite != isWhiteTurn) {
+		if (Chessmans [x, y].isWhite != turnManager.isWhiteTurn) {
 			return;
 		}
 		bool hasAtleastOneMove = false;
@@ -145,7 +143,7 @@ public class BoardManager : MonoBehaviour {
 	private void MoveChessman(int x, int y) {
 		if (allowedMoves[x,y] == true) {
 			Chessman c = Chessmans [x, y];
-			if (c != null && c.isWhite != isWhiteTurn) {
+			if (c != null && c.isWhite != turnManager.isWhiteTurn) {
 				//Captured a piece
 
 				//If it is the king 
@@ -160,7 +158,7 @@ public class BoardManager : MonoBehaviour {
 			//reset enPassant
 			if (x == EnPassantMove [0] && y == EnPassantMove [1]) {
 				//WHITE
-				if (isWhiteTurn) {
+				if (turnManager.isWhiteTurn) {
 					c = Chessmans [x, y - 1];
 				}
 				//BLACK
@@ -208,7 +206,7 @@ public class BoardManager : MonoBehaviour {
 			selectedChessman.transform.position = GetTileCenter (x, y, previousZ);
 			selectedChessman.SetPosition (x, y);
 			Chessmans [x, y] = selectedChessman;
-			isWhiteTurn = !isWhiteTurn;
+			turnManager.EndTurn();
 		}
 
 		// unselect piece at end
@@ -331,7 +329,7 @@ public class BoardManager : MonoBehaviour {
 	}
 
 	private void EndGame() {
-		if (isWhiteTurn) {
+		if (turnManager.isWhiteTurn) {
 			Debug.Log ("White team wins");
 		} else {
 			Debug.Log ("Black team wins");
@@ -340,7 +338,7 @@ public class BoardManager : MonoBehaviour {
 			PhotonNetwork.Destroy (go);
 		}
 
-		isWhiteTurn = true;
+		turnManager.EndGame ();
 		BoardHighlights.Instance.HideHighlights ();
 		SpawnAllChessmans ();
 		goldDisplay.ResetGold ();

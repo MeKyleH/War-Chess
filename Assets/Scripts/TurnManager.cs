@@ -8,13 +8,19 @@ public class TurnManager : MonoBehaviour {
 	public GameObject takeGoldButton;
 	public GoldDisplay goldDisplay;
 	public GameObject moveButton;
+	public bool isWhiteTurn = true;
 
 	private BoardManager boardManager;
+	private TurnText turnText;
 
 	private void Start() {
 		boardManager = GameObject.FindObjectOfType<BoardManager> ();
 		if (!boardManager) {
 			Debug.Log (name + " couldn't find boardManager");
+		}
+		turnText = GameObject.FindObjectOfType<TurnText> ();
+		if (!turnText) {
+			Debug.Log (name + " couldn't find turnText");
 		}
 	}
 
@@ -42,11 +48,16 @@ public class TurnManager : MonoBehaviour {
 	}
 
 	public void EndTurn () {
-		boardManager.isWhiteTurn = !boardManager.isWhiteTurn;
+		isWhiteTurn = !isWhiteTurn;
 		if (!boardManager.isBuyMode && boardManager.EnPassantMove != null) {
 			boardManager.EnPassantMove = new int[2] {-1,-1};
 		}
+		turnText.UpdateDisplay (isWhiteTurn);
 		boardManager.UnselectChessman ();
 		MovePiece ();
+	}
+
+	public void EndGame() {
+		isWhiteTurn = true;
 	}
 }

@@ -10,17 +10,17 @@ public class Button : MonoBehaviour {
 
 	private Text costText;
 	private Button[] buttonArray;
-	private BoardManager boardManager;
+	private TurnManager turnManager;
 
 	void Start() {
 		buttonArray = GameObject.FindObjectsOfType<Button> ();
 		costText = GetComponentInChildren<Text> ();
-		boardManager = GameObject.FindObjectOfType<BoardManager> ();
+		turnManager = GameObject.FindObjectOfType<TurnManager> ();
 		if (!costText) {
 			Debug.LogWarning (name + " has no cost");
 		}
-		if (!boardManager) {
-			Debug.Log(name + " couldn't find boardManager");
+		if (!turnManager) {
+			Debug.Log(name + " couldn't find turnManager");
 		}
 		costText.text = whiteDefenderPrefab.goldCost.ToString();
 	}
@@ -30,6 +30,6 @@ public class Button : MonoBehaviour {
 			thisButton.GetComponent<Image> ().color = Color.black;
 		}
 		GetComponent<Image> ().color = Color.white;
-		selectedDefender = boardManager.isWhiteTurn ? whiteDefenderPrefab : blackDefenderPrefab;
+		selectedDefender = turnManager.isWhiteTurn ? whiteDefenderPrefab : blackDefenderPrefab;
 	}
 }
