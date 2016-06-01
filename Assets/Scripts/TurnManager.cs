@@ -46,7 +46,7 @@ public class TurnManager : MonoBehaviour {
 		boardManager.isBuyMode = false;
 		EndTurn ();
 	}
-
+		
 	public void EndTurn () {
 		isWhiteTurn = !isWhiteTurn;
 		if (!boardManager.isBuyMode && boardManager.EnPassantMove != null) {
@@ -60,4 +60,5 @@ public class TurnManager : MonoBehaviour {
 	public void EndGame() {
 		isWhiteTurn = true;
 	}
+
 }

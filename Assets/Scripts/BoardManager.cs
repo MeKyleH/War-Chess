@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class BoardManager : MonoBehaviour {
 	
 	public bool isBuyMode = false;
-	public bool isNormalGame = true;
 	public List<GameObject> chessmanPrefabs;
 	public Material selectedMat;
 	public int[] EnPassantMove{ set; get;}

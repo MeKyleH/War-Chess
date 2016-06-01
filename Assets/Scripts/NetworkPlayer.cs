@@ -5,16 +5,16 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 
 	Vector3 position;
 	Quaternion rotation;
-	BoardManager boardManager;
+	TurnManager turnManager;
 
 	void Start () {
-		boardManager = GameObject.FindObjectOfType<BoardManager> ();
+		turnManager = GameObject.FindObjectOfType<TurnManager> ();
 
 		if (photonView.isMine) {
 			//ENABLE ANY SETTINGS THAT HAVE BEEN DISABLED FROM THE GENERIC PLAYER PREFAB (DON'T FORGET GRAVITY FOR RIGIDBODIES)
 			GetComponent<Camera>().enabled = true;
 		} else {
-			StartCoroutine ("UpdateData");
+			//StartCoroutine ("UpdateData");
 		}
 	}
 
@@ -32,9 +32,14 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 		if (stream.isWriting) {
 //			stream.SendNext(boardManager.isWhiteTurn);
 //			Debug.Log ("Sent Message: " + boardManager.isWhiteTurn);
+			stream.SendNext(turnManager.isWhiteTurn);
+			Debug.Log ("!!!!!!!!!Sent Message: " + turnManager.isWhiteTurn);
 		} else {
 //			boardManager.isWhiteTurn = (bool)stream.ReceiveNext();
 //			Debug.Log ("Received Message: " + boardManager.isWhiteTurn);
+			turnManager.isWhiteTurn = (bool)stream.ReceiveNext();
+			Debug.Log ("Received Message: " + turnManager.isWhiteTurn);
+
 		}
 	}
 

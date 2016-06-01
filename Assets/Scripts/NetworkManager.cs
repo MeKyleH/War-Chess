@@ -15,6 +15,7 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject inGameElements;
 	public GameObject outOfGameElements;
 	public GameObject turnManager;
+	public GameObject board;
 
 	GameObject player;
 	PhotonView photonView;
@@ -55,7 +56,6 @@ public class NetworkManager : MonoBehaviour {
 	//On initial room Join spawn the player immediately
 	void OnJoinedRoom() {
 		SetupRoom ();
-
 		//set player teams
 		if (PhotonNetwork.isMasterClient) {
 			PhotonNetwork.player.SetTeam (PunTeams.Team.blue);
@@ -69,10 +69,11 @@ public class NetworkManager : MonoBehaviour {
 
 	//transitions from out of game to in game
 	void SetupRoom() {
+		StopCoroutine ("UpdateConnectionString");
 		outOfGameElements.SetActive (false);
 		inGameElements.SetActive (true);
 		turnManager.SetActive (true);
-		StopCoroutine ("UpdateConnectionString");
+		board.SetActive (true);
 	}
 
 	//sets the lobby camera active and prepares to spawn the player
@@ -86,9 +87,8 @@ public class NetworkManager : MonoBehaviour {
 		yield return new WaitForSeconds(respawnTime);
 		bool isWhiteTeam = PhotonNetwork.player.GetTeam() == PunTeams.Team.blue;
 	
-		string playerCamera = isWhiteTeam ? "White Player Camera" : "Black Player Camera";
 		int index = isWhiteTeam? 0: 1;
-		player = PhotonNetwork.Instantiate (playerCamera,
+		player = PhotonNetwork.Instantiate ("Player Camera",
 			spawnPoints [index].position,
 			spawnPoints [index].rotation,
 			0);
@@ -96,11 +96,10 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 	//used for syncing player turns
-//	[PunRPC]
-//	void EndTurn_RPC(bool isWhiteTurn) {
-//		this.isWhiteTurn = isWhiteTurn;
-//		turnText.text = this.isWhiteTurn ? "White Turn" : "Black Turn";
-//	}
+	[PunRPC]
+	public void EndTurn_RPC(bool isWhiteTurn) {
+		//turnManager.SetWhiteTurn() = this.isWhiteTurn ? "White Turn" : "Black Turn";
+	}
 
 	void MovePiece_RPC(){
 
