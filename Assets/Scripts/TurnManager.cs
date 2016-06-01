@@ -12,6 +12,7 @@ public class TurnManager : MonoBehaviour {
 
 	private BoardManager boardManager;
 	private TurnText turnText;
+	private bool canPlayerClick;
 
 	private void Start() {
 		boardManager = GameObject.FindObjectOfType<BoardManager> ();
@@ -22,6 +23,28 @@ public class TurnManager : MonoBehaviour {
 		if (!turnText) {
 			Debug.Log (name + " couldn't find turnText");
 		}
+		ToggleButtonActivation(CheckCanPlayerClick());
+	}
+
+	private void Update() {
+		if(CheckCanPlayerClick() != canPlayerClick) {
+			Debug.Log ("Changing activation to " + CheckCanPlayerClick ());
+			ToggleButtonActivation (CheckCanPlayerClick());
+		}
+	}
+
+	private void ToggleButtonActivation(bool activation) {
+		buyButton.SetActive (activation);
+		buyMenu.SetActive (activation);
+		takeGoldButton.SetActive (activation);
+		moveButton.SetActive (activation);
+		canPlayerClick = activation;
+	}
+
+	private bool CheckCanPlayerClick() {
+		bool isWhiteTeam = PhotonNetwork.player.GetTeam () == PunTeams.Team.blue;
+		return (isWhiteTeam && isWhiteTurn) 
+			|| (!isWhiteTeam && !isWhiteTurn);
 	}
 
 	public void OpenBuyMenu() {
