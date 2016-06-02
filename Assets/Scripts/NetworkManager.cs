@@ -24,6 +24,7 @@ public class NetworkManager : MonoBehaviour {
 	public bool isWhiteTurn; //TODO MAKE PRIVATE
 	private bool joinedRoom = false;
 	private TurnManager turnManager;
+	private BoardManager boardManager;
 	private TurnText turnText;
 
 	void Start () {
@@ -87,6 +88,11 @@ public class NetworkManager : MonoBehaviour {
 			Debug.Log (name + " couldn't find turnText.");
 		}
 		isWhiteTurn = turnManager.isWhiteTurn;
+		/*boardManager = GameObject.FindObjectOfType<BoardManager> ();
+		if (!boardManager) {
+			Debug.Log (name + " couldn't find boardManager.");
+		}
+		boardManager.SpawnBaseChessmans (PhotonNetwork.player.GetTeam () == PunTeams.Team.blue);*/
 		joinedRoom = true;
 	}
 

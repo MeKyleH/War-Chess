@@ -35,6 +35,7 @@ public class BoardManager : MonoBehaviour {
 		}
 
 		SetupBoard ();
+		SpawnBaseChessmans (PhotonNetwork.player.GetTeam () == PunTeams.Team.blue);
 	}
 
 	private void Update () {
@@ -309,6 +310,59 @@ public class BoardManager : MonoBehaviour {
 		//Pawns
 		for(int i = 0; i < 8; i++) {
 			SpawnChessman (11, i,6);
+		}
+	}
+
+	//Used to spawn a normal game of chess
+	public void SpawnBaseChessmans(bool isWhitePlayer) {
+		//SPAWN WHITE TEAM
+		if (isWhitePlayer) {
+			//King
+			SpawnChessman (0, 3, 0);
+
+			//Queen
+			SpawnChessman (1, 4, 0);
+
+			//Rooks
+			SpawnChessman (2, 0, 0);
+//			SpawnChessman (2, 7, 0);
+
+			//Bishops
+			SpawnChessman (3, 2, 0);
+//			SpawnChessman (3, 5, 0);
+
+			//Knights
+			SpawnChessman (4, 1, 0);
+//			SpawnChessman (4, 6, 0);
+
+			//Pawns
+			for (int i = 2; i < 6; i++) {
+				SpawnChessman (5, i, 1);
+			}
+		} else {
+			//SPAWN BLACK TEAM
+			//King
+			SpawnChessman (6, 4, 7);
+
+			//Queen
+			SpawnChessman (7, 3, 7);
+
+			//Rooks
+//			SpawnChessman (8, 0, 7);
+			SpawnChessman (8, 7, 7);
+
+			//Bishops
+//			SpawnChessman (9, 2, 7);
+			SpawnChessman (9, 5, 7);
+
+			//Knights
+//			SpawnChessman (10, 1, 7);
+			SpawnChessman (10, 6, 7);
+
+			//Pawns
+			for(int i = 2; i < 6; i++) {
+				SpawnChessman (11, i,6);
+			}
 		}
 	}
 
