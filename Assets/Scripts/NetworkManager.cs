@@ -8,19 +8,23 @@ public class NetworkManager : MonoBehaviour {
 	public Text connectionText;
 	public Text teamColorText;
 	public Transform[] spawnPoints;
-	public Camera sceneCamera;
-	public GameObject serverWindow; //TODO RENAME TO LOBBYWINDOW
+	public Camera lobbyCamera;
+	public GameObject lobbyPanel;
 	public InputField username;
 	public InputField roomName;
 	public GameObject inGameElements;
 	public GameObject outOfGameElements;
-	public GameObject turnManager;
+	public GameObject turnManagerObj;
 	public GameObject board;
 
 	GameObject player;
 	PhotonView photonView;
 
 	private const string VERSION = "0.2";
+	public bool isWhiteTurn; //TODO MAKE PRIVATE
+	private bool joinedRoom = false;
+	private TurnManager turnManager;
+	private TurnText turnText;
 
 	void Start () {
 		PhotonNetwork.logLevel = PhotonLogLevel.Full;
@@ -42,7 +46,7 @@ public class NetworkManager : MonoBehaviour {
 
 	//activates the window for joining games
 	void OnJoinedLobby() {
-		serverWindow.SetActive (true);
+		lobbyPanel.SetActive (true);
 	}
 
 	//called by the button when a player has entered their username and room
@@ -72,13 +76,23 @@ public class NetworkManager : MonoBehaviour {
 		StopCoroutine ("UpdateConnectionString");
 		outOfGameElements.SetActive (false);
 		inGameElements.SetActive (true);
-		turnManager.SetActive (true);
+		turnManagerObj.SetActive (true);
 		board.SetActive (true);
+		turnManager = GameObject.FindObjectOfType<TurnManager> ();
+		if (!turnManager) {
+			Debug.Log (name + " couldn't find turnManager.");
+		}
+		turnText = GameObject.FindObjectOfType<TurnText> ();
+		if (!turnText) {
+			Debug.Log (name + " couldn't find turnText.");
+		}
+		isWhiteTurn = turnManager.isWhiteTurn;
+		joinedRoom = true;
 	}
 
 	//sets the lobby camera active and prepares to spawn the player
 	void StartSpawnProcess(float respawnTime) {
-		sceneCamera.enabled = true;
+		lobbyCamera.enabled = true;
 		StartCoroutine ("SpawnPlayer", respawnTime);
 	}
 
@@ -92,17 +106,23 @@ public class NetworkManager : MonoBehaviour {
 			spawnPoints [index].position,
 			spawnPoints [index].rotation,
 			0);
-		sceneCamera.enabled = false;
+		lobbyCamera.enabled = false;
+	}
+
+	void Update() {
+		if (!joinedRoom) {
+			return;
+		}
+		if (turnManager.isWhiteTurn != isWhiteTurn) {
+			photonView.RPC ("EndTurn_RPC", PhotonTargets.All, !isWhiteTurn);
+		}
 	}
 
 	//used for syncing player turns
 	[PunRPC]
 	public void EndTurn_RPC(bool isWhiteTurn) {
-		//turnManager.SetWhiteTurn() = this.isWhiteTurn ? "White Turn" : "Black Turn";
+		this.isWhiteTurn = isWhiteTurn;
+		turnManager.isWhiteTurn = isWhiteTurn;
+		turnText.UpdateDisplay (isWhiteTurn);
 	}
-
-	void MovePiece_RPC(){
-
-	}
-
 }

@@ -28,14 +28,12 @@ public class TurnManager : MonoBehaviour {
 
 	private void Update() {
 		if(CheckCanPlayerClick() != canPlayerClick) {
-			Debug.Log ("Changing activation to " + CheckCanPlayerClick ());
 			ToggleButtonActivation (CheckCanPlayerClick());
 		}
 	}
 
 	private void ToggleButtonActivation(bool activation) {
 		buyButton.SetActive (activation);
-		buyMenu.SetActive (activation);
 		takeGoldButton.SetActive (activation);
 		moveButton.SetActive (activation);
 		canPlayerClick = activation;
@@ -72,9 +70,9 @@ public class TurnManager : MonoBehaviour {
 		
 	public void EndTurn () {
 		isWhiteTurn = !isWhiteTurn;
-		if (!boardManager.isBuyMode && boardManager.EnPassantMove != null) {
+		/*if (!boardManager.isBuyMode && boardManager.EnPassantMove != null) {
 			boardManager.EnPassantMove = new int[2] {-1,-1};
-		}
+		}*/
 		turnText.UpdateDisplay (isWhiteTurn);
 		boardManager.UnselectChessman ();
 		MovePiece ();
