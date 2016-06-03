@@ -131,4 +131,8 @@ public class NetworkManager : MonoBehaviour {
 		turnManager.isWhiteTurn = isWhiteTurn;
 		turnText.UpdateDisplay (isWhiteTurn);
 	}
+
+	public void MovePiece(int x, int y) {
+
+	}
 }

@@ -134,6 +134,7 @@ public class BoardManager : MonoBehaviour {
 
 		//Select new chessman and highlight
 		selectedChessman = Chessmans [x, y];
+		selectedChessman.isSelectedChessman = true;
 		previousMat = selectedChessman.GetComponent<MeshRenderer> ().material;
 		selectedMat.mainTexture = previousMat.mainTexture;
 		selectedChessman.GetComponent<MeshRenderer> ().material = selectedMat;
@@ -211,6 +212,7 @@ public class BoardManager : MonoBehaviour {
 
 		// unselect piece at end
 		selectedChessman.GetComponent<MeshRenderer>().material = previousMat;
+		selectedChessman.isSelectedChessman = false;
 		selectedChessman = null;
 		BoardHighlights.Instance.HideHighlights ();
 	}
