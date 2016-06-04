@@ -21,7 +21,7 @@ public class NetworkManager : MonoBehaviour {
 	PhotonView photonView;
 
 	private const string VERSION = "0.3";
-	private bool isWhiteTurn;
+	public bool isWhiteTurn;
 	private bool joinedRoom = false;
 	private TurnManager turnManager;
 	private BoardManager boardManager;
@@ -89,6 +89,15 @@ public class NetworkManager : MonoBehaviour {
 		}
 		isWhiteTurn = turnManager.isWhiteTurn;
 		joinedRoom = true;
+	}
+
+	void OnPhotonPlayerConnected(PhotonPlayer player) {
+		Debug.Log ("OnPhotonPlayerConnected: " + player.name);
+
+		//Update whose turn it is when a new player joins
+		if (PhotonNetwork.isMasterClient) {
+			photonView.RPC ("EndTurn_RPC", PhotonTargets.All, isWhiteTurn);
+		}
 	}
 
 	//sets the lobby camera active and prepares to spawn the player

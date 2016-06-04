@@ -17,18 +17,18 @@ public class GoldDisplay : MonoBehaviour {
 			Debug.Log (name + " couldn't find turnManager");
 		}
 		goldText = GetComponent<Text> ();
-		UpdateDisplay ();
+		UpdateGoldDisplay ();
 	}
 
 	public void AddGold(int amount) {
 		gold += amount;
-		UpdateDisplay ();
+		UpdateGoldDisplay ();
 	}
 
 	public Status UseGold(int amount) {
 		if (gold >= amount) {
 			gold -= amount;
-			UpdateDisplay ();
+			UpdateGoldDisplay ();
 			return Status.SUCCESS;
 		}
 		return Status.FAILURE;
@@ -36,10 +36,10 @@ public class GoldDisplay : MonoBehaviour {
 
 	public void ResetGold() {
 		gold = 15;
-		UpdateDisplay ();
+		UpdateGoldDisplay ();
 	}
 
-	private void UpdateDisplay(){
+	private void UpdateGoldDisplay(){
 		goldText.text = gold.ToString ();
 	}
 }
