@@ -20,8 +20,8 @@ public class NetworkManager : MonoBehaviour {
 	GameObject player;
 	PhotonView photonView;
 
-	private const string VERSION = "0.2";
-	public bool isWhiteTurn; //TODO MAKE PRIVATE
+	private const string VERSION = "0.3";
+	private bool isWhiteTurn;
 	private bool joinedRoom = false;
 	private TurnManager turnManager;
 	private BoardManager boardManager;
@@ -88,11 +88,6 @@ public class NetworkManager : MonoBehaviour {
 			Debug.Log (name + " couldn't find turnText.");
 		}
 		isWhiteTurn = turnManager.isWhiteTurn;
-		/*boardManager = GameObject.FindObjectOfType<BoardManager> ();
-		if (!boardManager) {
-			Debug.Log (name + " couldn't find boardManager.");
-		}
-		boardManager.SpawnBaseChessmans (PhotonNetwork.player.GetTeam () == PunTeams.Team.blue);*/
 		joinedRoom = true;
 	}
 

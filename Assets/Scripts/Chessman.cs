@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Chessman : MonoBehaviour {
+public abstract class Chessman : Photon.MonoBehaviour {
 
 	public int CurrentX{ set; get; }
 	public int CurrentY{ set; get; }
@@ -18,10 +18,15 @@ public abstract class Chessman : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collider) {
-		if (!isSelectedChessman) {
-			PhotonView photonView = PhotonView.Get (this);
-			PhotonNetwork.Destroy (photonView);
+		if (isSelectedChessman) {
+			collider.GetComponent<PhotonView> ().RPC ("DestroyChessman_RPC", PhotonTargets.All);
 		}
 	}
 
+	[PunRPC]
+	public void DestroyChessman_RPC() {
+		if (photonView.isMine) {
+			PhotonNetwork.Destroy (gameObject);
+		}
+	}
 }
