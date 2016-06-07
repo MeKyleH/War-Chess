@@ -22,6 +22,7 @@ public class BoardManager : MonoBehaviour {
 	private Material previousMat;
 	private TurnManager turnManager;
 	private GoldDisplay goldDisplay;
+	private PhotonView photonView;
 
 	private void Start() {
 		Instance = this;
@@ -32,6 +33,10 @@ public class BoardManager : MonoBehaviour {
 		goldDisplay = GameObject.FindObjectOfType<GoldDisplay> ();
 		if (!goldDisplay) {
 			Debug.Log (name + " couldn't find GoldDisplay");
+		}
+		photonView = GetComponent<PhotonView> ();
+		if (!photonView) {
+			Debug.Log (name + " couldn't find photonview.");
 		}
 
 		SetupBoard ();
@@ -211,9 +216,11 @@ public class BoardManager : MonoBehaviour {
 		}
 
 		// unselect piece at end
-		selectedChessman.GetComponent<MeshRenderer>().material = previousMat;
-		selectedChessman.isSelectedChessman = false;
-		selectedChessman = null;
+		if (selectedChessman) {
+			selectedChessman.GetComponent<MeshRenderer> ().material = previousMat;
+			selectedChessman.isSelectedChessman = false;
+			selectedChessman = null;
+		}
 		BoardHighlights.Instance.HideHighlights ();
 	}
 
@@ -262,8 +269,23 @@ public class BoardManager : MonoBehaviour {
 		Chessmans [x, y] = go.GetComponent<Chessman> ();
 		Chessmans [x, y].SetPosition (x, y);
 		activeChessman.Add (go);
+		Debug.Log ("photonView: " +photonView + " photonView.ownerId: " + photonView.ownerId + " photonView.viewID: " +photonView.viewID);
+		photonView.RPC ("UpdatePlayerPositionOnSpawn_RPC", PhotonTargets.All, index, x, y, z);
 	}
 
+	[PunRPC]
+	public void UpdatePlayerPositionOnSpawn_RPC(int index, int x, int y, float z) {
+		if (Chessmans [x, y] != null) {
+			return;
+		}
+		GameObject go = Instantiate (chessmanPrefabs [index], GetTileCenter(x,y,z), orientation) as GameObject;
+		go.transform.SetParent (transform);
+		Chessmans [x, y] = go.GetComponent<Chessman> ();
+		Chessmans [x, y].SetPosition (x, y);
+		Destroy (go);
+	}
+
+/*
 	//Used to spawn a normal game of chess
 	public void SpawnAllChessmans() {
 		//SPAWN WHITE TEAM
@@ -314,7 +336,7 @@ public class BoardManager : MonoBehaviour {
 			SpawnChessman (11, i,6);
 		}
 	}
-
+*/
 	//Used to spawn a normal game of chess
 	public void SpawnBaseChessmans(bool isWhitePlayer) {
 		//SPAWN WHITE TEAM
@@ -375,7 +397,7 @@ public class BoardManager : MonoBehaviour {
 		EnPassantMove = new int[2] {-1,-1};
 	}
 
-	private Vector3 GetTileCenter(int x, int y, float z) {
+	public Vector3 GetTileCenter(int x, int y, float z) {
 		Vector3 origin = Vector3.zero;
 		origin.x += (TILE_SIZE * x) + TILE_OFFSET;
 		origin.z += (TILE_SIZE * y) + TILE_OFFSET;
@@ -395,7 +417,7 @@ public class BoardManager : MonoBehaviour {
 
 		turnManager.EndGame ();
 		BoardHighlights.Instance.HideHighlights ();
-		SpawnAllChessmans ();
+		SpawnBaseChessmans (PhotonNetwork.player.GetTeam () == PunTeams.Team.blue);
 		goldDisplay.ResetGold ();
 	}
 }
