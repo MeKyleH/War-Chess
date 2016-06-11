@@ -20,16 +20,15 @@ public class NetworkManager : MonoBehaviour {
 	GameObject player;
 	PhotonView photonView;
 
-	private const string VERSION = "0.3";
+	private const string VERSION = "0.4";
 	public bool isWhiteTurn;
 	private bool joinedRoom = false;
 	private TurnManager turnManager;
 	private BoardManager boardManager;
 	private TurnText turnText;
-	private PositionSharing positionSharing;
 
 	void Start () {
-		PhotonNetwork.logLevel = PhotonLogLevel.ErrorsOnly;
+		PhotonNetwork.logLevel = PhotonLogLevel.Full;
 		PhotonNetwork.ConnectUsingSettings (VERSION);
 		PhotonNetwork.autoCleanUpPlayerObjects = false;
 
@@ -88,10 +87,6 @@ public class NetworkManager : MonoBehaviour {
 		if (!turnText) {
 			Debug.Log (name + " couldn't find turnText.");
 		}
-		positionSharing = GameObject.FindObjectOfType<PositionSharing> ();
-		if (!positionSharing) {
-			Debug.Log (name + " coudln't find positionSharing.");
-		}
 		isWhiteTurn = turnManager.isWhiteTurn;
 		joinedRoom = true;
 	}
@@ -101,8 +96,7 @@ public class NetworkManager : MonoBehaviour {
 
 		//Update whose turn it is when a new player joins
 		if (PhotonNetwork.isMasterClient) {
-			string finalPieceLocations = positionSharing.GetPieceLocationsString ();
-			photonView.RPC ("EndTurn_RPC", PhotonTargets.All, isWhiteTurn, finalPieceLocations);
+			photonView.RPC ("EndTurn_RPC", PhotonTargets.All, isWhiteTurn);
 		}
 	}
 
@@ -130,21 +124,19 @@ public class NetworkManager : MonoBehaviour {
 			return;
 		}
 		if (turnManager.isWhiteTurn != isWhiteTurn) {
-			string finalPieceLocations = positionSharing.GetPieceLocationsString ();
-			photonView.RPC ("EndTurn_RPC", PhotonTargets.All, !isWhiteTurn, finalPieceLocations);
+			photonView.RPC ("EndTurn_RPC", PhotonTargets.All, !isWhiteTurn);
 		}
 	}
 
 	//used for syncing player turns
 	[PunRPC]
-	public void EndTurn_RPC(bool isWhiteTurn, string finalPieceLocations) {
-		positionSharing.SyncPieceLocations (finalPieceLocations);
+	public void EndTurn_RPC(bool isWhiteTurn) {
 		this.isWhiteTurn = isWhiteTurn;
 		turnManager.isWhiteTurn = isWhiteTurn;
 		turnText.UpdateDisplay (isWhiteTurn);
 	}
 
-	//TODO CREATE METHOD THAT CONVERTS STRING TO JSON AND JSON TO STRING TRANSFER
-	//THE STRING VIA RPC THAT CONTAINS ALL OF THE CHESSMAN MOVES AND THEN SHARES IT 
-	//WITH ALL PLAYERS
+	public void MovePiece(int x, int y) {
+
+	}
 }

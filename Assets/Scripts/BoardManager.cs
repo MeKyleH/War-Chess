@@ -36,11 +36,9 @@ public class BoardManager : MonoBehaviour {
 		}
 		photonView = GetComponent<PhotonView> ();
 		if (!photonView) {
-			Debug.Log (name + " couldn't find photonview.");
+			Debug.Log (name + " coudln't find photonView.");
 		}
-
 		SetupBoard ();
-		SpawnBaseChessmans (PhotonNetwork.player.GetTeam () == PunTeams.Team.blue);
 	}
 
 	private void Update () {
@@ -158,7 +156,7 @@ public class BoardManager : MonoBehaviour {
 					return;
 				}
 				activeChessman.Remove(c.gameObject);
-				PhotonNetwork.Destroy (c.gameObject);
+				PhotonNetwork.Destroy (c.gameObject); //TODO REMOVE THIS AS IT IS LIKELY HANDLED BY THE COLLIDERS OF THE CHESSMAN
 			}
 
 			//reset enPassant
@@ -206,7 +204,8 @@ public class BoardManager : MonoBehaviour {
 					EnPassantMove [1] = y+1;
 				}
 			}
-				
+			photonView.RPC ("MoveChessman_RPC", PhotonTargets.All, GetPrefabIndex (selectedChessman),selectedChessman.CurrentX, selectedChessman.CurrentY, x, y, PhotonNetwork.player.GetTeam () == PunTeams.Team.blue);
+
 			Chessmans [selectedChessman.CurrentX, selectedChessman.CurrentY] = null;
 			float previousZ = selectedChessman.transform.position.y;
 			selectedChessman.transform.position = GetTileCenter (x, y, previousZ);
@@ -216,12 +215,48 @@ public class BoardManager : MonoBehaviour {
 		}
 
 		// unselect piece at end
-		if (selectedChessman) {
-			selectedChessman.GetComponent<MeshRenderer> ().material = previousMat;
-			selectedChessman.isSelectedChessman = false;
-			selectedChessman = null;
-		}
+		selectedChessman.GetComponent<MeshRenderer>().material = previousMat;
+		selectedChessman.isSelectedChessman = false;
+		selectedChessman = null;
 		BoardHighlights.Instance.HideHighlights ();
+	}
+
+	//returns the prefab index of the selected chessman to be passed to MoveChessman_RPC
+	private int GetPrefabIndex(Chessman chessman) {
+		bool whiteOrBlack = PhotonNetwork.player.GetTeam () == PunTeams.Team.blue;
+		if (selectedChessman.GetType () == typeof(Pawn)) {
+			return whiteOrBlack ? 5 : 11;
+		}
+		else if (selectedChessman.GetType () == typeof(Knight)) {
+			return whiteOrBlack ? 4 : 10;
+		}
+		else if (selectedChessman.GetType () == typeof(Bishop)) {
+			return whiteOrBlack ? 3 : 9;
+		}
+		else if (selectedChessman.GetType () == typeof(Rook)) {
+			return whiteOrBlack ? 2 : 8;
+		}
+		else if (selectedChessman.GetType () == typeof(Queen)) {
+			return whiteOrBlack ? 1 : 7;
+		}
+		else if (selectedChessman.GetType () == typeof(King)) {
+			return whiteOrBlack ? 0 : 6;
+		}
+		return 0;
+	}
+
+	[PunRPC]
+	public void MoveChessman_RPC(int index, int previousX, int previousY, int newX, int newY, bool isWhitePlayer) {
+		if (PhotonNetwork.player.GetTeam () == PunTeams.Team.blue != isWhitePlayer) {
+			Debug.Log ("index: " + index);
+			//remove old piece from it's position
+			Chessmans [previousX, previousY] = null;
+
+			//add new piece in the new position
+			GameObject go = chessmanPrefabs [index];
+			Chessmans [newX, newY] = go.GetComponent<Chessman> ();
+			Chessmans [newX, newY].SetPosition (newX, newY); 
+		}
 	}
 
 	public void UnselectChessman() {
@@ -269,23 +304,19 @@ public class BoardManager : MonoBehaviour {
 		Chessmans [x, y] = go.GetComponent<Chessman> ();
 		Chessmans [x, y].SetPosition (x, y);
 		activeChessman.Add (go);
-		Debug.Log ("photonView: " +photonView + " photonView.ownerId: " + photonView.ownerId + " photonView.viewID: " +photonView.viewID);
-		photonView.RPC ("UpdatePlayerPositionOnSpawn_RPC", PhotonTargets.All, index, x, y, z);
+		photonView.RPC ("ProcessPiecePurchase_RPC", PhotonTargets.All, index, x, y, PhotonNetwork.player.GetTeam () == PunTeams.Team.blue);
 	}
 
 	[PunRPC]
-	public void UpdatePlayerPositionOnSpawn_RPC(int index, int x, int y, float z) {
-		if (Chessmans [x, y] != null) {
-			return;
+	public void ProcessPiecePurchase_RPC(int index, int x, int y, bool isWhitePlayer) {
+		if (PhotonNetwork.player.GetTeam () == PunTeams.Team.blue != isWhitePlayer) {
+			GameObject go = chessmanPrefabs [index];
+			Chessmans [x, y] = go.GetComponent<Chessman> ();
+			Chessmans [x, y].SetPosition (x, y);
+			activeChessman.Add (go);
 		}
-		GameObject go = Instantiate (chessmanPrefabs [index], GetTileCenter(x,y,z), orientation) as GameObject;
-		go.transform.SetParent (transform);
-		Chessmans [x, y] = go.GetComponent<Chessman> ();
-		Chessmans [x, y].SetPosition (x, y);
-		Destroy (go);
 	}
 
-/*
 	//Used to spawn a normal game of chess
 	public void SpawnAllChessmans() {
 		//SPAWN WHITE TEAM
@@ -336,7 +367,7 @@ public class BoardManager : MonoBehaviour {
 			SpawnChessman (11, i,6);
 		}
 	}
-*/
+
 	//Used to spawn a normal game of chess
 	public void SpawnBaseChessmans(bool isWhitePlayer) {
 		//SPAWN WHITE TEAM
@@ -397,7 +428,7 @@ public class BoardManager : MonoBehaviour {
 		EnPassantMove = new int[2] {-1,-1};
 	}
 
-	public Vector3 GetTileCenter(int x, int y, float z) {
+	private Vector3 GetTileCenter(int x, int y, float z) {
 		Vector3 origin = Vector3.zero;
 		origin.x += (TILE_SIZE * x) + TILE_OFFSET;
 		origin.z += (TILE_SIZE * y) + TILE_OFFSET;
@@ -417,7 +448,7 @@ public class BoardManager : MonoBehaviour {
 
 		turnManager.EndGame ();
 		BoardHighlights.Instance.HideHighlights ();
-		SpawnBaseChessmans (PhotonNetwork.player.GetTeam () == PunTeams.Team.blue);
+		SpawnAllChessmans ();
 		goldDisplay.ResetGold ();
 	}
 }
