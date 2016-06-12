@@ -282,7 +282,7 @@ public class BoardManager : MonoBehaviour {
 		}
 	}
 
-	private void SpawnChessman(int index, int x, int y) {
+	public void SpawnChessman(int index, int x, int y) {
 		//prevents duplicate pieces from spawning
 		if (Chessmans [x, y] != null) {
 			return;

@@ -16,6 +16,7 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject outOfGameElements;
 	public GameObject turnManagerObj;
 	public GameObject board;
+	public GameObject fogManagerObj;
 
 	GameObject player;
 	PhotonView photonView;
@@ -26,6 +27,7 @@ public class NetworkManager : MonoBehaviour {
 	private TurnManager turnManager;
 	private BoardManager boardManager;
 	private TurnText turnText;
+	private FogManager fogManager;
 
 	void Start () {
 		PhotonNetwork.logLevel = PhotonLogLevel.Full;
@@ -78,11 +80,17 @@ public class NetworkManager : MonoBehaviour {
 		outOfGameElements.SetActive (false);
 		inGameElements.SetActive (true);
 		turnManagerObj.SetActive (true);
+		fogManagerObj.SetActive (true);
 		board.SetActive (true);
 		turnManager = GameObject.FindObjectOfType<TurnManager> ();
 		if (!turnManager) {
 			Debug.Log (name + " couldn't find turnManager.");
 		}
+		fogManager = GameObject.FindObjectOfType<FogManager> ();
+		if (!fogManager) {
+			Debug.Log (name + " couldn't find fogManager.");
+		}
+
 		turnText = GameObject.FindObjectOfType<TurnText> ();
 		if (!turnText) {
 			Debug.Log (name + " couldn't find turnText.");
