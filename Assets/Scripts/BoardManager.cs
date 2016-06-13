@@ -21,7 +21,6 @@ public class BoardManager : MonoBehaviour {
 	private List<GameObject> activeChessman;
 	private Material previousMat;
 	private TurnManager turnManager;
-	private FogManager fogManager;
 	private GoldDisplay goldDisplay;
 	private PhotonView photonView;
 	private bool isWhitePlayer;
@@ -32,10 +31,6 @@ public class BoardManager : MonoBehaviour {
 		turnManager = GameObject.FindObjectOfType<TurnManager> ();
 		if (!turnManager) {
 			Debug.Log (name + " couldn't find TurnManager");
-		}
-		fogManager = GameObject.FindObjectOfType<FogManager> ();
-		if (!fogManager) {
-			Debug.Log (name + " couldn't find fogManager.");
 		}
 		goldDisplay = GameObject.FindObjectOfType<GoldDisplay> ();
 		if (!goldDisplay) {
@@ -211,7 +206,6 @@ public class BoardManager : MonoBehaviour {
 					EnPassantMove [1] = y+1;
 				}
 			}
-			fogManager.AddSingleFog (selectedChessman.CurrentX, selectedChessman.CurrentY);
 
 			photonView.RPC ("MoveChessman_RPC", PhotonTargets.All, GetPrefabIndex (selectedChessman),selectedChessman.CurrentX, selectedChessman.CurrentY, x, y, PhotonNetwork.player.GetTeam () == PunTeams.Team.blue);
 
@@ -220,7 +214,6 @@ public class BoardManager : MonoBehaviour {
 			selectedChessman.transform.position = GetTileCenter (x, y, previousZ);
 			selectedChessman.SetPosition (x, y);
 			Chessmans [x, y] = selectedChessman;
-			fogManager.RemoveSingleFog (x, y);
 			turnManager.EndTurn();
 		}
 

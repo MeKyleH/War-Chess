@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class FogManager : MonoBehaviour {
 
 	private BoardManager boardManager;
+	private TurnManager turnManager;
 	private GameObject[,] Fogs { set; get; }
 
 	private const float TILE_SIZE = 1.0f;
@@ -20,6 +21,10 @@ public class FogManager : MonoBehaviour {
 		if (!boardManager) {
 			Debug.Log (name + " couldn't find boardManager.");
 		}
+		turnManager = GameObject.FindObjectOfType<TurnManager> (); 
+		if (!turnManager) {
+			Debug.Log (name + " couldn't find turnManager.");
+		}
 		AddBaseFog ();
 	}
 
@@ -30,18 +35,46 @@ public class FogManager : MonoBehaviour {
 				continue;
 			}
 			for (int x = 0; x < 8; x++) {
+				if (Fogs [x, y] != null) {
+					continue;
+				}
 				GameObject go = Instantiate (boardManager.chessmanPrefabs [12], GetTileCenter (x, y), orientation) as GameObject;			
 				Fogs [x, y] = go;
 			}
 		}
 	}	
 
-	private Vector3 GetTileCenter(int x, int y) {
-		Vector3 origin = Vector3.zero;
-		origin.x += (TILE_SIZE * x) + TILE_OFFSET;
-		origin.z += (TILE_SIZE * y) + TILE_OFFSET;
-		origin.y += FOG_Z_OFFSET;
-		return origin;	
+	public void AddSingleFog (int x, int y) {
+		if ((isWhitePlayer && (y == 0 || y == 1)) || (!isWhitePlayer && (y == 6 || y == 7))) {
+			return;
+		}
+		GameObject go = Instantiate (boardManager.chessmanPrefabs [12], GetTileCenter (x, y), orientation) as GameObject;			
+		Fogs [x, y] = go;
+	}
+
+	public void UpdatePieceMoves(Chessman[,] Chessmans) {
+		AddBaseFog ();
+		for (int y = 0; y < 8; y++) {
+			for (int x = 0; x < 8; x++) {
+				if (Chessmans [x, y] != null && ((isWhitePlayer && Chessmans[x,y].isWhite) || (!isWhitePlayer && !Chessmans[x,y].isWhite))) {
+					RemoveAllowedMovesFog (Chessmans [x, y].PossibleMove ());
+					RemoveSingleFog (x, y);
+				}
+			}
+		}
+	}
+
+	private void RemoveAllowedMovesFog(bool [,] allowedMoves) {
+		for (int y = 0; y < 8; y++) {
+			if ((isWhitePlayer && (y == 0 || y == 1)) || (!isWhitePlayer && (y == 6 || y == 7))) {
+				continue;
+			}
+			for (int x = 0; x < 8; x++) {
+				if (allowedMoves [x, y]) {
+					RemoveSingleFog (x, y);
+				}
+			}
+		}
 	}
 
 	public void RemoveSingleFog(int x, int y) {
@@ -50,11 +83,11 @@ public class FogManager : MonoBehaviour {
 		Destroy (selectedFog);
 	}
 
-	public void AddSingleFog (int x, int y) {
-		if ((isWhitePlayer && (y == 0 || y == 1)) || (!isWhitePlayer && (y == 6 || y == 7))) {
-			return;
-		}
-		GameObject go = Instantiate (boardManager.chessmanPrefabs [12], GetTileCenter (x, y), orientation) as GameObject;			
-		Fogs [x, y] = go;
+	private Vector3 GetTileCenter(int x, int y) {
+		Vector3 origin = Vector3.zero;
+		origin.x += (TILE_SIZE * x) + TILE_OFFSET;
+		origin.z += (TILE_SIZE * y) + TILE_OFFSET;
+		origin.y += FOG_Z_OFFSET;
+		return origin;	
 	}
 }

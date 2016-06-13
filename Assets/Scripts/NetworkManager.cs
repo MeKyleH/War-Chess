@@ -21,7 +21,7 @@ public class NetworkManager : MonoBehaviour {
 	GameObject player;
 	PhotonView photonView;
 
-	private const string VERSION = "0.4";
+	private const string VERSION = "0.5";
 	public bool isWhiteTurn;
 	private bool joinedRoom = false;
 	private TurnManager turnManager;
@@ -86,6 +86,10 @@ public class NetworkManager : MonoBehaviour {
 		if (!turnManager) {
 			Debug.Log (name + " couldn't find turnManager.");
 		}
+		boardManager = GameObject.FindObjectOfType<BoardManager> ();
+		if (!boardManager) {
+			Debug.Log (name + " couldn't find boardManager.");
+		}
 		fogManager = GameObject.FindObjectOfType<FogManager> ();
 		if (!fogManager) {
 			Debug.Log (name + " couldn't find fogManager.");
@@ -142,6 +146,7 @@ public class NetworkManager : MonoBehaviour {
 		this.isWhiteTurn = isWhiteTurn;
 		turnManager.isWhiteTurn = isWhiteTurn;
 		turnText.UpdateDisplay (isWhiteTurn);
+		fogManager.UpdatePieceMoves (boardManager.Chessmans);
 	}
 
 	public void MovePiece(int x, int y) {
