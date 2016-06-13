@@ -16,7 +16,7 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 		} 
 	}
 
-
+	//TODO MAYBE DELETE THIS
 	// Sends and receives information from other players (photon views)
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 		if (stream.isWriting) {
