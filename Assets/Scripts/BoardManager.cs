@@ -23,9 +23,11 @@ public class BoardManager : MonoBehaviour {
 	private TurnManager turnManager;
 	private GoldDisplay goldDisplay;
 	private PhotonView photonView;
+	private bool isWhitePlayer;
 
 	private void Start() {
 		Instance = this;
+		isWhitePlayer = PhotonNetwork.player.GetTeam () == PunTeams.Team.blue;
 		turnManager = GameObject.FindObjectOfType<TurnManager> ();
 		if (!turnManager) {
 			Debug.Log (name + " couldn't find TurnManager");
@@ -43,7 +45,7 @@ public class BoardManager : MonoBehaviour {
 
 	private void Update () {
 		UpdateSelection ();
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButtonDown (0) && ((turnManager.isWhiteTurn && isWhitePlayer) || (!turnManager.isWhiteTurn && !isWhitePlayer))) {
 			ProcessClick ();
 		}
 	}
