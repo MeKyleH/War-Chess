@@ -5,11 +5,16 @@ using System.Collections.Generic;
 public class BoardManager : MonoBehaviour {
 	
 	public bool isBuyMode = false;
+	public bool isInitialPlacementMode = true; //TODO MAKE THIS PRIVATE
+	public int initialPlacementIndex = 0; //TODO MAKE THIS PRIVATE
 	public List<GameObject> chessmanPrefabs;
 	public Material selectedMat;
 	public int[] EnPassantMove{ set; get;}
 	public static BoardManager Instance{ set; get; }
 	public Chessman[,] Chessmans{ set; get; }
+	public GameObject initialPlacementTextObj;
+	public GameObject inGameElements;
+	public GameObject buttonElements;
 
 	private const float TILE_SIZE = 1.0f;
 	private const float TILE_OFFSET = 0.5f;
@@ -22,6 +27,7 @@ public class BoardManager : MonoBehaviour {
 	private Material previousMat;
 	private TurnManager turnManager;
 	private GoldDisplay goldDisplay;
+	private InitialPiecePlacement initialPlacementText;
 	private PhotonView photonView;
 	private bool isWhitePlayer;
 
@@ -40,6 +46,10 @@ public class BoardManager : MonoBehaviour {
 		if (!photonView) {
 			Debug.Log (name + " coudln't find photonView.");
 		}
+		initialPlacementText = GameObject.FindObjectOfType<InitialPiecePlacement> ();
+		if (!initialPlacementText) {
+			Debug.Log (name + " couldn't find initialPlacementText.");
+		}
 		SetupBoard ();
 	}
 
@@ -53,11 +63,15 @@ public class BoardManager : MonoBehaviour {
 	private void ProcessClick ()
 	{
 		if (selectionX >= 0 && selectionY >= 0) {
+			//INITIAL PLACEMENT MODE
+			if (isInitialPlacementMode) {
+				ProcessInitialPlacement ();
+			}
 			//BUY MODE
-			if (isBuyMode) {
+			else if (isBuyMode) {
 				ProcessPiecePurchase ();
 			}
-			//MOVE MODE MODE
+			//MOVE MODE
 			else {
 				//select the chessman
 				if (selectedChessman == null) {
@@ -68,6 +82,62 @@ public class BoardManager : MonoBehaviour {
 					MoveChessman (selectionX, selectionY);
 				}
 			}
+		}
+	}
+
+	void ProcessInitialPlacement() {
+		//KING PLACEMENT
+		if (initialPlacementIndex == 0) {
+			SpawnChessman (isWhitePlayer ? 0 : 6, selectionX, selectionY);
+			initialPlacementText.UpdateText ("Click the board to place your Queen.");
+			initialPlacementIndex++;
+		} 
+		//QUEEN PLACEMENT
+		else if (initialPlacementIndex == 1) {
+			SpawnChessman (isWhitePlayer ? 1 : 7, selectionX, selectionY);
+			initialPlacementText.UpdateText ("Click the board to place your Rook.");
+			initialPlacementIndex++;
+		} 
+		//ROOK PLACEMENT
+		else if (initialPlacementIndex == 2) {
+			SpawnChessman (isWhitePlayer ? 2 : 8, selectionX, selectionY);
+			initialPlacementText.UpdateText ("Click the board to place your Knight.");
+			initialPlacementIndex++;
+		}
+		//KNIGHT PLACEMENT
+		else if (initialPlacementIndex == 3) {
+			SpawnChessman (isWhitePlayer ? 3 : 9, selectionX, selectionY);
+			initialPlacementText.UpdateText ("Click the board to place your Bishop.");
+			initialPlacementIndex++;
+		}
+		//BISHOP PLACEMENT
+		else if (initialPlacementIndex == 4) {
+			SpawnChessman (isWhitePlayer ? 4 : 10, selectionX, selectionY);
+			initialPlacementText.UpdateText ("Click the board to place your first Pawn.");
+			initialPlacementIndex++;
+		}
+		//PAWN 1 PLACEMENT
+		else if (initialPlacementIndex == 5) {
+			SpawnChessman (isWhitePlayer ? 5 : 11, selectionX, selectionY);
+			initialPlacementText.UpdateText ("Click the board to place your last Pawn.");
+			initialPlacementIndex++;
+		}
+		//PAWN 2 PLACEMENT
+		else if (initialPlacementIndex == 6) {
+			SpawnChessman (isWhitePlayer ? 5 : 11, selectionX, selectionY);
+			initialPlacementIndex++;
+			isInitialPlacementMode = false;
+			initialPlacementTextObj.SetActive (false);
+			inGameElements.SetActive (true);
+			buttonElements.SetActive (true);
+			turnManager.EndTurn ();
+		} 
+		//PROTECTS FROM ERRORS
+		else {
+			isInitialPlacementMode = false;
+			initialPlacementTextObj.SetActive (false);
+			inGameElements.SetActive (true);
+			buttonElements.SetActive (true);
 		}
 	}
 

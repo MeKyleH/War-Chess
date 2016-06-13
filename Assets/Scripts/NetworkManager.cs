@@ -12,7 +12,9 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject lobbyPanel;
 	public InputField username;
 	public InputField roomName;
+	public GameObject initialPlacementTextObj;
 	public GameObject inGameElements;
+	public GameObject buttonElements;
 	public GameObject outOfGameElements;
 	public GameObject turnManagerObj;
 	public GameObject board;
@@ -78,7 +80,9 @@ public class NetworkManager : MonoBehaviour {
 	void SetupRoom() {
 		StopCoroutine ("UpdateConnectionString");
 		outOfGameElements.SetActive (false);
-		inGameElements.SetActive (true);
+		initialPlacementTextObj.SetActive (true);
+		inGameElements.SetActive(true);
+		buttonElements.SetActive (false);
 		turnManagerObj.SetActive (true);
 		fogManagerObj.SetActive (true);
 		board.SetActive (true);

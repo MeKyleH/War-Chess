@@ -14,7 +14,7 @@ public class King : Chessman {
 		j = CurrentY + 1;
 		if (CurrentY != 7) {
 			for (int k = 0; k < 3; k++) {
-				if (i >= 0 || i < 8) {
+				if (i >= 0 && i < 8) {
 					c = BoardManager.Instance.Chessmans [i, j];
 					if (c == null) {
 						r [i, j] = true;
@@ -31,7 +31,7 @@ public class King : Chessman {
 		j = CurrentY - 1;
 		if (CurrentY != 0) {
 			for (int k = 0; k < 3; k++) {
-				if (i >= 0 || i < 8) {
+				if (i >= 0 && i < 8) {
 					c = BoardManager.Instance.Chessmans [i, j];
 					if (c == null) {
 						r [i, j] = true;
