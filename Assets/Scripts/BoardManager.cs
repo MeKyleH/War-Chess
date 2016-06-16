@@ -86,6 +86,13 @@ public class BoardManager : MonoBehaviour {
 	}
 
 	void ProcessInitialPlacement() {
+		bool validPlacement = (turnManager.isWhiteTurn && (selectionY == 0 || selectionY == 1))
+		                      || (!turnManager.isWhiteTurn && (selectionY == 7 || selectionY == 6));
+
+		if (!validPlacement) {
+			return;
+		}
+
 		//KING PLACEMENT
 		if (initialPlacementIndex == 0) {
 			SpawnChessman (isWhitePlayer ? 0 : 6, selectionX, selectionY);
@@ -362,7 +369,7 @@ public class BoardManager : MonoBehaviour {
 		// creates new piece
 		float z;
 		if (index == 13) {
-			z = 0.8f;
+			z = 0.9f;
 			return;
 		}
 		if (index == 5 || index == 11) {
