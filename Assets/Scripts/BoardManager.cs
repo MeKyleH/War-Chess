@@ -369,7 +369,7 @@ public class BoardManager : MonoBehaviour {
 		// creates new piece
 		float z;
 		if (index == 13) {
-			z = 0.9f;
+			z = 1.1f;
 			return;
 		}
 		if (index == 5 || index == 11) {

@@ -10,7 +10,7 @@ public class FogManager : MonoBehaviour {
 
 	private const float TILE_SIZE = 1.0f;
 	private const float TILE_OFFSET = 0.5f;
-	private const float FOG_Z_OFFSET = 0.68f;
+	private const float FOG_Z_OFFSET = 0.8f;
 	private Quaternion orientation = Quaternion.Euler(0, 0, 0);
 	private bool isWhitePlayer;
 
