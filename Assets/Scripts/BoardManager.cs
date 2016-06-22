@@ -27,6 +27,7 @@ public class BoardManager : MonoBehaviour {
 	private Material previousMat;
 	private TurnManager turnManager;
 	private GoldDisplay goldDisplay;
+	private LevelManager levelManager;
 	private InitialPiecePlacement initialPlacementText;
 	private PhotonView photonView;
 	private bool isWhitePlayer;
@@ -49,6 +50,10 @@ public class BoardManager : MonoBehaviour {
 		initialPlacementText = GameObject.FindObjectOfType<InitialPiecePlacement> ();
 		if (!initialPlacementText) {
 			Debug.Log (name + " couldn't find initialPlacementText.");
+		}
+		levelManager = GameObject.FindObjectOfType<LevelManager> ();
+		if (!levelManager) {
+			Debug.Log (name + " couldn't find levelManager.");
 		}
 		SetupBoard ();
 	}
@@ -231,7 +236,7 @@ public class BoardManager : MonoBehaviour {
 
 				//If it is the king 
 				if (c.GetType () == typeof(King)) {
-					EndGame ();
+					photonView.RPC ("EndGame_RPC", PhotonTargets.All);
 					return;
 				}
 				activeChessman.Remove(c.gameObject);
@@ -447,59 +452,6 @@ public class BoardManager : MonoBehaviour {
 		}
 	}
 
-	//Used to spawn a normal game of chess
-	public void SpawnBaseChessmans(bool isWhitePlayer) {
-		//SPAWN WHITE TEAM
-		if (isWhitePlayer) {
-			//King
-			SpawnChessman (0, 3, 0);
-
-			//Queen
-			SpawnChessman (1, 4, 0);
-
-			//Rooks
-			SpawnChessman (2, 0, 0);
-//			SpawnChessman (2, 7, 0);
-
-			//Bishops
-			SpawnChessman (3, 2, 0);
-//			SpawnChessman (3, 5, 0);
-
-			//Knights
-			SpawnChessman (4, 1, 0);
-//			SpawnChessman (4, 6, 0);
-
-			//Pawns
-			for (int i = 2; i < 6; i++) {
-				SpawnChessman (5, i, 1);
-			}
-		} else {
-			//SPAWN BLACK TEAM
-			//King
-			SpawnChessman (6, 4, 7);
-
-			//Queen
-			SpawnChessman (7, 3, 7);
-
-			//Rooks
-//			SpawnChessman (8, 0, 7);
-			SpawnChessman (8, 7, 7);
-
-			//Bishops
-//			SpawnChessman (9, 2, 7);
-			SpawnChessman (9, 5, 7);
-
-			//Knights
-//			SpawnChessman (10, 1, 7);
-			SpawnChessman (10, 6, 7);
-
-			//Pawns
-			for(int i = 2; i < 6; i++) {
-				SpawnChessman (11, i,6);
-			}
-		}
-	}
-
 	void SetupBoard ()
 	{
 		activeChessman = new List<GameObject> ();
@@ -515,19 +467,22 @@ public class BoardManager : MonoBehaviour {
 		return origin;	
 	}
 
-	private void EndGame() {
-		if (turnManager.isWhiteTurn) {
-			Debug.Log ("White team wins");
+	[PunRPC]
+	private void EndGame_RPC() {
+		BoardHighlights.Instance.HideHighlights ();
+
+		if ((turnManager.isWhiteTurn && PhotonNetwork.player.GetTeam () == PunTeams.Team.blue) || (!turnManager.isWhiteTurn && PhotonNetwork.player.GetTeam () != PunTeams.Team.blue)) {
+			Debug.Log ("YOU WIN");
+			PlayerPrefsManager.AddToGamesWonCount ();
 		} else {
-			Debug.Log ("Black team wins");
+			Debug.Log ("YOU LOSE");
+			PlayerPrefsManager.AddToGamesLostCount ();
 		}
 		foreach (GameObject go in activeChessman) {
-			PhotonNetwork.Destroy (go);
+			if (photonView.isMine) {
+				PhotonNetwork.Destroy (go);
+			}
 		}
-
-		turnManager.EndGame ();
-		BoardHighlights.Instance.HideHighlights ();
-		SpawnAllChessmans ();
-		goldDisplay.ResetGold ();
+		levelManager.LoadLevel ("03a Win");
 	}
 }

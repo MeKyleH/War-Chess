@@ -6,6 +6,24 @@ public class PlayerPrefsManager : MonoBehaviour {
 	const string MASTER_VOLUME_KEY = "master_volume";
 	const string DIFFICULTY_KEY = "difficulty";
 	const string LEVEL_KEY = "level_unlocked_";
+	const string GAMES_WON_COUNT = "games_won_count";
+	const string GAMES_LOST_COUNT = "games_lost_count";
+
+	public static void AddToGamesWonCount() {
+		PlayerPrefs.SetInt (GAMES_WON_COUNT, GetGamesWonCount () + 1); 
+	}
+
+	public static int GetGamesWonCount () {
+		return PlayerPrefs.GetInt (GAMES_WON_COUNT);
+	}
+
+	public static void AddToGamesLostCount() {
+		PlayerPrefs.SetInt (GAMES_LOST_COUNT, GetGamesLostCount () + 1); 
+	}
+
+	public static int GetGamesLostCount () {
+		return PlayerPrefs.GetInt (GAMES_LOST_COUNT);
+	}
 
 	public static void SetMasterVolume (float volume) {
 		if (volume >= 0f && volume <= 1f) {
@@ -38,8 +56,7 @@ public class PlayerPrefsManager : MonoBehaviour {
 			Debug.LogError ("Trying to query level not in build order");
 			return false;
 		}
-	}
-	
+	}	
 	
 	public static void SetDifficulty (float difficulty) {
 		if (difficulty >= 1f && difficulty <= 3f) {

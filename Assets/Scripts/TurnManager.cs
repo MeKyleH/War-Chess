@@ -77,9 +77,4 @@ public class TurnManager : MonoBehaviour {
 		boardManager.UnselectChessman ();
 		MovePiece ();
 	}
-
-	public void EndGame() {
-		isWhiteTurn = true;
-	}
-
 }
