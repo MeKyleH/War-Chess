@@ -19,6 +19,7 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject turnManagerObj;
 	public GameObject board;
 	public GameObject fogManagerObj;
+	public GameObject fbLoggedIn;
 
 	GameObject player;
 	PhotonView photonView;
@@ -52,6 +53,7 @@ public class NetworkManager : MonoBehaviour {
 	//activates the window for joining games
 	void OnJoinedLobby() {
 		lobbyPanel.SetActive (true);
+		username.text = FaceBookManager.Instance.ProfileName;
 	}
 
 	//called by the button when a player has entered their username and room
@@ -86,6 +88,7 @@ public class NetworkManager : MonoBehaviour {
 		turnManagerObj.SetActive (true);
 		fogManagerObj.SetActive (true);
 		board.SetActive (true);
+		fbLoggedIn.SetActive (false);
 		turnManager = GameObject.FindObjectOfType<TurnManager> ();
 		if (!turnManager) {
 			Debug.Log (name + " couldn't find turnManager.");

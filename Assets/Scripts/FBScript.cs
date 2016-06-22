@@ -67,6 +67,9 @@ public class FBScript : MonoBehaviour {
 		if (FaceBookManager.Instance.ProfilePic != null) {
 			Image profilePic = DialogProfilePic.GetComponent<Image> ();
 			profilePic.sprite = FaceBookManager.Instance.ProfilePic;
+			Color alphaColor = profilePic.color;
+			alphaColor.a = 255;
+			profilePic.color = alphaColor;
 		} else {
 			StartCoroutine ("WaitForProfilePic");
 		}
