@@ -27,6 +27,13 @@ public class FBScript : MonoBehaviour {
         FB.LogInWithReadPermissions (permissions, AuthCallBack);
     }
 
+	public void FBSkipLogin() {
+		Debug.Log ("Skipped Login");
+		DialogLoggedIn.SetActive (false);
+		DialogLoggedOut.SetActive (false);
+		networkManager.SetActive (true);
+	}
+
     void AuthCallBack(IResult result)
     {
         if (result.Error != null) {
