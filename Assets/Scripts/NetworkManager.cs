@@ -20,6 +20,7 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject board;
 	public GameObject fogManagerObj;
 	public GameObject fbLoggedIn;
+	public AudioClip endTurnSFX;
 
 	GameObject player;
 	PhotonView photonView;
@@ -31,13 +32,16 @@ public class NetworkManager : MonoBehaviour {
 	private BoardManager boardManager;
 	private TurnText turnText;
 	private FogManager fogManager;
+	private AudioSource audioSource;
 
 	void Start () {
 		PhotonNetwork.logLevel = PhotonLogLevel.Full;
 		PhotonNetwork.ConnectUsingSettings (VERSION);
 		PhotonNetwork.autoCleanUpPlayerObjects = false;
 
+		audioSource = GetComponent<AudioSource> ();
 		photonView = GetComponent<PhotonView> ();
+
 		StartCoroutine ("UpdateConnectionString");
 	}
 
@@ -53,7 +57,9 @@ public class NetworkManager : MonoBehaviour {
 	//activates the window for joining games
 	void OnJoinedLobby() {
 		lobbyPanel.SetActive (true);
-		username.text = FaceBookManager.Instance.ProfileName;
+		if (FaceBookManager.Instance.IsLoggedIn) {
+			username.text = FaceBookManager.Instance.ProfileName;
+		}
 	}
 
 	//called by the button when a player has entered their username and room
@@ -153,10 +159,8 @@ public class NetworkManager : MonoBehaviour {
 		this.isWhiteTurn = isWhiteTurn;
 		turnManager.isWhiteTurn = isWhiteTurn;
 		turnText.UpdateDisplay (isWhiteTurn);
+		audioSource.clip = endTurnSFX;
+		audioSource.Play ();
 		fogManager.UpdatePieceMoves (boardManager.Chessmans);
-	}
-
-	public void MovePiece(int x, int y) {
-
 	}
 }

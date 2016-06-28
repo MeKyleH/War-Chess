@@ -91,8 +91,9 @@ public class BoardManager : MonoBehaviour {
 	}
 
 	void ProcessInitialPlacement() {
-		bool validPlacement = (turnManager.isWhiteTurn && (selectionY == 0 || selectionY == 1))
-		                      || (!turnManager.isWhiteTurn && (selectionY == 7 || selectionY == 6));
+		bool validPlacement = ((turnManager.isWhiteTurn && (selectionY == 0 || selectionY == 1))
+			|| (!turnManager.isWhiteTurn && (selectionY == 7 || selectionY == 6)))
+			&& Chessmans[selectionX,selectionY] == null;
 
 		if (!validPlacement) {
 			return;
